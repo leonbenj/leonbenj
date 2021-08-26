@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @leonbenj
-- 👀 I’m interested in ... Tesla's mission, contributing to Mars missions, minimalism, stoicism, travel. 
+- 👀 I’m interested in ... Tesla's mission, contributing to Mars missions, veganism, minimalism, stoicism, travel. 
 - 🌱 I’m currently learning ... Python.
 - 💞️ I’m looking to collaborate on ... any projects on GitHub (newbie!)
 - 📫 How to reach me ... via Twitter @leonbenj
