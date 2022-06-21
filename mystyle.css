@@ -2,9 +2,15 @@ html {
     font-size: 100%; 
 }
 
-body {
-    background-color: white;
+.sections, body {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 800px;
+}
+
+body {
+    background-color: whitesmoke;
 }
 
 h1 {
@@ -35,4 +41,8 @@ a:hover {
     color: red;
     background-color: transparent;
     text-decoration: underline;
+}
+
+.counter {
+    text-align: center;
 }
