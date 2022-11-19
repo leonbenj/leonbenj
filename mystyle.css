@@ -2,20 +2,48 @@ html {
     font-size: 100%; 
 }
 
-.sections, body {
+.header {
+    background-color: #F1f1f1;
+    text-align: center;
+    padding: 20px;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color:#333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:#f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.sections, body {
+    margin: 0;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px;
     max-width: 800px;
 }
 
 body {
     background-color: whitesmoke;
+    font-family: "Lato", sans-serif;
 }
 
-h1 {
-    font-size: 2rem;
-}
 
 h2, h3 {
         font-size: 1.5rem;
@@ -25,11 +53,11 @@ a,p,li {
         font-size: 1.2rem;
 }
 
-a:link {
+/*a:link {
     color: blue;
     background-color: transparent;
     text-decoration: none;
-}
+} 
 
 a:visited {
     color: blue;
@@ -41,7 +69,7 @@ a:hover {
     color: red;
     background-color: transparent;
     text-decoration: underline;
-}
+} */
 
 .counter {
     text-align: center;
