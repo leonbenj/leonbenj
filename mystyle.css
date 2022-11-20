@@ -2,10 +2,23 @@ html {
     font-size: 100%; 
 }
 
+:root {
+    --primary-color: #FCF8E8 ;
+    --secondary-color: #000000 ;
+    --third-color: #ECB390;
+}
+
+.dark-mode { 
+    --primary-color: #000000 ;
+    --secondary-color: #C69749 ;
+    --third-color: #735F32;
+}
+
+
 .header {
-    background-color: #F1f1f1;
     text-align: center;
     padding: 20px;
+    color: var(--secondary-color);
 }
 
 * {
@@ -14,20 +27,20 @@ html {
 
 .topnav {
     overflow: hidden;
-    background-color:#333;
+    background-color: var(--secondary-color);
 }
 
 .topnav a {
     float: left;
     display: block;
-    color:#f2f2f2;
+    color: var(--primary-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: var(--third-color);
     color: black;
 }
 
@@ -39,14 +52,18 @@ html {
     max-width: 800px;
 }
 
+
+
 body {
-    background-color: whitesmoke;
+    background-color: var(--primary-color);
     font-family: "Lato", sans-serif;
+    color: var(--secondary-color);
 }
 
 
 h2, h3 {
         font-size: 1.5rem;
+        color: var(--third-color;)
 }
 
 a,p,li {
@@ -74,3 +91,10 @@ a:hover {
 .counter {
     text-align: center;
 }
+
+
+
+
+
+
+
