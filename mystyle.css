@@ -6,12 +6,14 @@ html {
     --primary-color: #FCF8E8 ;
     --secondary-color: #000000 ;
     --third-color: #ECB390;
+    --aLinks:blue;
 }
 
 .dark-mode { 
     --primary-color: #000000 ;
     --secondary-color: #C69749 ;
     --third-color: #735F32;
+    --aLinks: #e76f51;
 }
 
 
@@ -53,7 +55,6 @@ html {
 }
 
 
-
 body {
     background-color: var(--primary-color);
     font-family: "Lato", sans-serif;
@@ -63,13 +64,16 @@ body {
 
 h2, h3 {
         font-size: 1.5rem;
-        color: var(--third-color;)
+        color: var(--secondary-color)
 }
 
 a,p,li {
-        font-size: 1.2rem;
+        font-size: 1rem;
 }
 
+a {
+    color: var(--aLinks);
+}
 /*a:link {
     color: blue;
     background-color: transparent;
@@ -93,8 +97,51 @@ a:hover {
 }
 
 
+:root {
+    --marginSidenav: 160px;
+}
 
+.sidenav {
+    width: 240px;
+    position:absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(231, 231, 231);
+    overflow-x: hidden;
+    padding: 10px;
+}
 
+.sidenav p {
+    padding: 6px 10px 6px 10px;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+}
+
+.main {
+    margin-right: 240px;
+    padding: 0px 10px;
+}
+
+.testiContainer {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.testiContainer::after {
+    content:"";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav p {font-size: 18px;}
+  }
 
 
 
