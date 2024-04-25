@@ -16,12 +16,12 @@ h1, h2, h3 {
 
 /* Link colors */
 a {
-  color: #0077cc; /* Your desired color for normal link state */
+  color: rgb(58, 169, 159); /* Your desired color for normal link state */
 }
 
 /* Visited link color */
 a:visited {
-  color: #4a6785; /* Your desired color for visited link state */
+  color: rgb(67, 133, 190); /* Your desired color for visited link state */
 }
 
 /* Hover link color */
