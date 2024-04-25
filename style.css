@@ -14,7 +14,7 @@ h1, h2, h3 {
   color: #AF3029;
 }
 
-/* Link colors */
+/* Link colors - inspired by https://stephango.com/flexoki */ 
 a {
   color: rgb(58, 169, 159); /* Your desired color for normal link state */
 }
