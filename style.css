@@ -5,9 +5,31 @@ body {
   font-family: Georgia, serif;
   font-size: 18px;
   line-height: 1.6em;
-  color: black;
+  color: rgb(206, 205, 195);
+  background-color: #000000;
 }
 h1, h2, h3 {
   font-family: sans-serif;
   font-weight: normal;
+  color: #AF3029;
+}
+
+/* Link colors */
+a {
+  color: #0077cc; /* Your desired color for normal link state */
+}
+
+/* Visited link color */
+a:visited {
+  color: #4a6785; /* Your desired color for visited link state */
+}
+
+/* Hover link color */
+a:hover {
+  color: #d33682; /* Your desired color for hover link state */
+}
+
+/* Active link color */
+a:active {
+  color: #b00; /* Your desired color for active link state */
 }
