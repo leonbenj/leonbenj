@@ -15,19 +15,8 @@ h1, h2, h3 {
 }
 
 /* Link colors - inspired by https://stephango.com/flexoki */ 
-a {
-  color: rgb(58, 169, 159); /* Your desired color for normal link state */
-}
-
-/* Visited link color */
-a:visited {
-  color: rgb(67, 133, 190); /* Your desired color for visited link state */
-}
 
 /* Hover link color */
-a:hover {
-  color: #d33682; /* Your desired color for hover link state */
-}
 
 /* Active link color */
 a:active {
