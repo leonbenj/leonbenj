@@ -2,23 +2,7 @@ body {
   max-width: 40em;
   margin: 0 auto;
   padding: 5px;
-  font-family: Georgia, serif;
+  font-family: 'Menlo', sans-serif;
   font-size: 18px;
   line-height: 1.6em;
-  color: rgb(206, 205, 195);
-  background-color: #000000;
-}
-h1, h2, h3 {
-  font-family: sans-serif;
-  font-weight: normal;
-  color: #AF3029;
-}
-
-/* Link colors - inspired by https://stephango.com/flexoki */ 
-
-/* Hover link color */
-
-/* Active link color */
-a:active {
-  color: #b00; /* Your desired color for active link state */
 }
