@@ -6,3 +6,9 @@ body {
   font-size: 18px;
   line-height: 1.6em;
 }
+
+.testimonial {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
