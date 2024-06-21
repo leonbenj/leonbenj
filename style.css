@@ -12,3 +12,9 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
+
+.cta {
+  border: 5px solid #e43737;
+  padding: 30px;
+  margin-bottom: 20px;
+}
