@@ -2,19 +2,56 @@ body {
   max-width: 40em;
   margin: 0 auto;
   padding: 5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   line-height: 1.6em;
+  background-color: #15202b;
+  color: #e7e9ea;
+}
+
+:link, :visited {
+  color: #80bfff; /* A lighter shade of blue for better visibility */
+  text-decoration: none;
+}
+
+:link:hover, :visited:hover {
+  text-decoration: underline;
 }
 
 .testimonial {
-  border: 1px solid #ccc;
+  border: 1px solid #38444d;
+  background-color: #192734;
   padding: 10px;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .cta {
-  border: 5px solid #e43737;
+  border: 5px solid #1da1f2;
+  background-color: #253341;
+  color: #ffffff;
   padding: 30px;
   margin-bottom: 20px;
+}
+
+button, .button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  opacity: 0.8;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+input, textarea {
+  background-color: #253341;
+  border: 1px solid #38444d;
+  color: #ffffff;
 }
