@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @leonbenj
-- 👀 I’m interested in ... Tesla's mission, contributing to Mars missions, veganism, minimalism, stoicism, travel. 
-- 🌱 I’m currently learning ... Python.
-- 💞️ I’m looking to collaborate on ... any projects on GitHub (newbie!)
-- 📫 How to reach me ... via Twitter @leonbenj
+- 👀 I’m interested in ... Tesla's mission, contributing to Mars missions, making reggae dub music, vegan food. 
+- 🌱 I’m currently learning ... useful Google Sheet features!
+- 💞️ I’m looking to collaborate on ... your business to systemize it or helping your sales. 
+- 📫 How to reach me ... via X @leonbenj
 
 <!---
 leonbenj/leonbenj is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
