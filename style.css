@@ -55,3 +55,26 @@ input, textarea {
   border: 1px solid #38444d;
   color: #ffffff;
 }
+
+.navbar ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+
+}
+
+.navbar li{
+  float: left;
+}
+
+.navbar a{
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover{
+  background-color: #293f53;
+}
