@@ -26,6 +26,14 @@ body {
   color: #ffffff;
 }
 
+.project {
+  border: 1px solid #38444d;
+  background-color: #192734;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
 .cta {
   border: 5px solid #1da1f2;
   background-color: #253341;
