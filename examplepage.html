@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Projects | Leonbenj</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav-header></nav-header>
+
+<h2>Projects</h2>
+
+<hr>
+
+<!-- Example of a collapsible section -->
+<button class="collapsible">Project A - Description</button>
+<div class="collapsible-content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Morbi venenatis, nunc in aliquet pellentesque, nisl nunc dapibus odio, id suscipit nunc nisl eu massa.</p>
+</div>
+
+<button class="collapsible">Project B - Development Process</button>
+<div class="collapsible-content">
+  <p>Cras lacinia, nunc nec convallis tincidunt, nunc nunc posuere tellus, nec tincidunt urna tellus eu nisl. Donec vel quam ac nunc tincidunt posuere. Vivamus et quam at nunc tristique suscipit. Donec vestibulum, felis eu tincidunt lacinia, nunc nunc lacinia nunc, eu tincidunt tellus nunc quis nunc.</p>
+</div>
+
+<button class="collapsible">Project C - Challenges Faced</button>
+<div class="collapsible-content">
+  <p>Nulla facilisi. Donec nec nunc nec nunc tincidunt lacinia. Vivamus et quam at nunc tristique suscipit. Donec vestibulum, felis eu tincidunt lacinia, nunc nunc lacinia nunc, eu tincidunt tellus nunc quis nunc. Suspendisse potenti.</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<cta-footer></cta-footer>
+<script src="./headerFooterManager.js"></script>
+
+</body>
+</html>
