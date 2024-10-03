@@ -4,7 +4,7 @@ class NavHeader extends HTMLElement {
         <h1><a href='/'>Leon Benjamignan</a></h1>
         <nav class="navbar">
         <ul>
-            <li><a href="index.html">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="speaking.html">Speaking</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
@@ -22,11 +22,24 @@ class CtaFooter extends HTMLElement {
         this.innerHTML = `
 <footer>
 <hr>
-<p>© 2024 <a href=/>Leon Benjamignan</a> / Join my <a href="/">newsletter</a> for project updates and special offers.
+<p>© 2024 <a href=/>Leon Benjamignan</a> / Join my <a href="/contact.html">newsletter</a> for my insights and special offers straight in your inbox.
 </footer>
+`;
+    }
+}
+
+class CtaEmail extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+<p>
+Join my newsletter to get my insights and special offers in your inbox: </p>
+<div id="convertkit-form-container">
+    <script async data-uid="a11e974e74" src="https://leonbenj.ck.page/a11e974e74/index.js"></script>
+</div>
 `;
     }
 }
 
 customElements.define('nav-header',NavHeader)
 customElements.define('cta-footer',CtaFooter)
+customElements.define('cta-email',CtaEmail)
