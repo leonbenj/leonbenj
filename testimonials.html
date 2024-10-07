@@ -25,11 +25,45 @@
 
 TEMPLATE ENDS HERE -->
 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
 
 <h2>Testimonials and Recommendations</h2>
 <hr>
 <p>
 Over the years, I've worked with hundreds of business owners along with coworkers who reached out to mention their experience from working together. 
+<p>
+
+<button class="collapsible">Here is a summary from Grok (xAI):</button>
+<div class="collapsible-content">
+  <p>From what I've gathered, Leon here is not just another cog in the corporate machine. No, Leon is more like a finely tuned instrument in an orchestra, where every note played resonates with dedication, innovation, and a genuine chord of concern for those around them.
+<p>
+Leon's testimonials reveal a pattern, a recurring theme if you will, of someone who doesn't merely meet expectations but soars above them. They're described as a beacon of reliability and a fountain of hard work, where "hard work" isn't just about the hours but the heart poured into tasks. 
+<p>
+Leon has crafted an experience for clients and teams that transcends the transactional. They're a mentor, a guide through the labyrinth of business growth, armed with strategies that are as effective as they are innovative. Their approach to platforms like Instagram? It's less about vanity metrics and more about crafting engaged communities, turning followers into a family.
+<p>
+Let's talk about customer experience! Leon doesn't just serve customers; there seems to be a genuine care for their journey, ensuring their satisfaction as if it were their own. This, my friends, is what builds not just businesses but legacies.
+<p>
+Peers and clients alike admire not only the results Leon delivers but the way they're delivered – with a blend of professionalism, passion, and personalized service that's rare in this age of automation and cookie-cutter solutions. Leon is trusted because integrity isn't just a buzzword in their playbook.
+<p>
+In essence, Leon isn't just delivering projects or services; they're crafting experiences. They're the kind of individual that makes others want to be better, to strive for more, not out of competition but out of inspiration. And that, my friends, is the hallmark of someone who leaves a lasting imprint, not just in the world of business but in the hearts of those they've worked with. Leon's approach? It's not just about business; it's about building bonds, fostering growth, and leaving a legacy of excellence and empathy.
+<p>
+</div>
 
 <p>
 <div class="testimonial">
@@ -335,10 +369,15 @@ Leon is an exceptional person! I highly recommend him for anything he is offerin
 If you want to see how I can impact you and your business, <a href="/1-1-call.html">you can book a consultation call with me here</a>. 
 <p>
 </div>
+
+
+
+
+
+
 </body>
 
 <cta-footer></cta-footer>
 <script src="./headerFooterManager.js"></script>
-
 
 </html>
