@@ -22,7 +22,7 @@ class CtaFooter extends HTMLElement {
         this.innerHTML = `
 <footer>
 <hr>
-<p>© 2024 <a href=/>Leon Benjamignan</a> / Join my <a href="/contact.html">newsletter</a> for my insights and special offers straight in your inbox.
+<p>© 2025 <a href=/>Leon Benjamignan</a> / Join my <a href="/contact.html">newsletter here</a>.
 </footer>
 `;
     }
