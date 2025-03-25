@@ -4,7 +4,7 @@ class NavHeader extends HTMLElement {
         <h1><a href='/'>Leon Benjamignan</a></h1>
         <nav class="navbar">
         <ul>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://leonbenj.bearblog.dev/blog/">Blog</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="speaking.html">Speaking</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
@@ -32,7 +32,7 @@ class CtaEmail extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
 <p>
-Join my newsletter to get my insights and special offers in your inbox: </p>
+Join my newsletter:</p>
 <div id="convertkit-form-container">
     <script async data-uid="a11e974e74" src="https://leonbenj.ck.page/a11e974e74/index.js"></script>
 </div>
