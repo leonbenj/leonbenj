@@ -5,11 +5,8 @@ class NavHeader extends HTMLElement {
         <nav class="navbar">
         <ul>
             <li><a href="https://leonbenj.bearblog.dev/blog/">Blog</a></li>
-            <li><a href="projects.html">Projects</a></li>
             <li><a href="speaking.html">Speaking</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
         </nav>
         <hr>
@@ -22,7 +19,7 @@ class CtaFooter extends HTMLElement {
         this.innerHTML = `
 <footer>
 <hr>
-<p>© 2025 <a href=/>Leon Benjamignan</a> / Join my <a href="/contact.html">newsletter here</a>.
+<p>© 2025 <a href=/>Leon Benjamignan</a> / Read my <a href="https://leonbenj.bearblog.dev/blog/">blog here</a>.
 </footer>
 `;
     }
