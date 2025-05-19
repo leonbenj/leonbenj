@@ -1,0 +1,135 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Join My List | Leon Benj</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6e1d9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-container {
+            max-width: 100%;
+            margin: 0;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .last-image-wrapper {
+            position: relative;
+            max-width: 100%;
+        }
+        .signup-section {
+            position: absolute;
+            bottom: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            height: 40%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        footer {
+            margin-top: 80px;
+        }
+        @media (max-width: 600px) {
+            .signup-section {
+                height: 30%;
+                bottom: -5%;
+            }
+            footer {
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav-header></nav-header>
+    <script src="./headerFooterManager.js"></script>
+
+    <!-- Image of Notebooks at the Top -->
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747631473/notebooks.jpg" alt="Stack of Notebooks">
+    </div>
+
+    <!-- Image 1 -->
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628223/optin1.jpg" alt="Notebook Page 1">
+    </div>
+
+    <!-- Image 2 -->
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628224/optin2.jpg" alt="Notebook Page 2">
+    </div>
+
+    <!-- Last Image with Signup Section Overlay -->
+    <div class="last-image-wrapper">
+        <div class="image-container">
+            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628222/optin3.jpg" alt="Notebook Page 3">
+        </div>
+        <div class="signup-section">
+            <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaaed/index.js"></script>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <p>© 2025 Leon Benjamignan.</p>
+    </footer>
+</body>
+</html>
