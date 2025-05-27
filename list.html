@@ -76,6 +76,7 @@
             font-size: 1.3em; /* EDIT HERE: Change body font size */
             color: #1f2937; /* EDIT HERE: Change text color */
             line-height: 32px; /* Matches background lines */
+            overflow: hidden; /* Ensures text wraps properly around image */
         }
 
         .content h1 {
@@ -105,6 +106,24 @@
             font-weight: 600;
         }
 
+        /* Polaroid image styling */
+        .polaroid {
+            float: right; /* Floats image to top right */
+            width: 150px; /* EDIT HERE: Change image width */
+            height: auto;
+            margin: 10px 10px 10px 20px; /* EDIT HERE: Adjust image margins */
+            border: 2px solid #4a5568; /* EDIT HERE: Change image border color */
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Clearfix to prevent layout issues after floating image */
+        .content::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
         /* Email form container styling */
         .email-form {
             margin-top: 20px;
@@ -120,6 +139,9 @@
             .notebook {
                 border-color: #4a5568;
             }
+            .polaroid {
+                border-color: #4a5568;
+            }
         }
 
         /* Light mode fallback */
@@ -128,6 +150,9 @@
                 background-color: #e2e8f0;
             }
             .notebook {
+                border-color: #cbd5e0;
+            }
+            .polaroid {
                 border-color: #cbd5e0;
             }
         }
@@ -151,6 +176,13 @@
 
             .content ul {
                 margin: 8px 0;
+            }
+
+            .polaroid {
+                float: none; /* Center image on mobile */
+                display: block;
+                margin: 10px auto; /* Center with auto margins */
+                width: 120px; /* Smaller image on mobile */
             }
 
             .email-form {
@@ -180,15 +212,16 @@
 <body>
     <div class="notebook">
         <div class="content">
-            <p>Yo, Leon here. 
-            <p>This page is about why you might consider joining my daily email list:  
-            <p>Almost every time I'd visit my grandfather, we'd talk philosophy and fascinating aspects about life, including the last time I spoke with him.
-            <p>We would dig deep into a particular situation and realize something special together. 
-            <p>Or he would show me a useful thing he'd created for himself which I thought was so simple and cool. 
-            <p>I'd always leave with a new insight and see things differently. 
-            <p>Now that he's gone, I continued these conversations and creations in my journals and thought I could share them in a daily email so you can get a glimpse and be useful to you.
-            <p> 
-            <p>If you don't know me yet, here's a bit about me so far:
+            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1748362459/Polaroid.jpg" alt="Leon’s Polaroid" class="polaroid">
+            <p>Yo, Leon here.</p>
+            <p>This page is about why you might consider joining my daily email list:</p>
+            <p>Almost every time I'd visit my grandfather, we'd talk philosophy and fascinating aspects about life, including the last time I spoke with him.</p>
+            <p>We would dig deep into a particular situation and realize something special together.</p>
+            <p>Or he would show me a useful thing he'd created for himself which I thought was so simple and cool.</p>
+            <p>I'd always leave with a new insight and see things differently.</p>
+            <p>Now that he's gone, I continued these conversations and creations in my journals and thought I could share them in a daily email so you can get a glimpse and be useful to you.</p>
+            <p></p>
+            <p>If you don't know me yet, here's a bit about me so far:</p>
             <ul>
                 <li>A Tesla top performer for 2.5 years</li>
                 <li>Burger-eating champion (won $500 cash)</li>
@@ -198,14 +231,10 @@
                 <li>Coached personal trainers & gym owners how to get loyal clients from Instagram for 7 years</li>
                 <li>Moved across Canada in my Tesla</li>
             </ul>
-            <p>It's hard to say which of the above was sparked by my conversations with my grandfather but it's clear to me that I wouldn't be where I am today without them. 
-            <p>Where could you end up? 
+            <p>It's hard to say which of the above was sparked by my conversations with my grandfather but it's clear to me that I wouldn't be where I am today without them.</p>
+            <p>Where could you end up?</p>
             <p>Sign up to my <span class="highlight">daily emails</span> to join in on the conversations and stay updated about my useful & simple projects.</p>
         </div>
         <div class="email-form">
-            <!-- EDIT HERE: Kit script renders the email form -->
-            <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaaed/index.js"></script>
-        </div>
-    </div>
-</body>
-</html>
+            <!-- EDIT HERE: Kitco script renders the email form -->
+            <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaa
