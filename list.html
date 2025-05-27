@@ -160,7 +160,7 @@
         /* Mobile optimization */
         @media (max-width: 600px) {
             .notebook {
-                padding: 24px 20px 20px 50px; /* Adjusted for mobile */
+                padding: 24px 20px 20px 40px; /* Adjusted for mobile to accommodate image */
                 min-height: 500px;
             }
 
@@ -170,7 +170,7 @@
             }
 
             .content {
-                font-size: 1.1em;
+                font-size: 1.1em; /* Slightly smaller for mobile */
                 line-height: 32px;
             }
 
@@ -179,10 +179,8 @@
             }
 
             .polaroid {
-                float: none; /* Center image on mobile */
-                display: block;
-                margin: 10px auto; /* Center with auto margins */
-                width: 120px; /* Smaller image on mobile */
+                width: 120px; /* Smaller image on mobile, but keeps float: right */
+                margin: 10px 10px 10px 15px; /* Adjusted margin for tighter mobile layout */
             }
 
             .email-form {
@@ -191,7 +189,7 @@
 
             /* Adjust spiral for mobile */
             .notebook::before {
-                width: 20px; /* Smaller spiral */
+                width: 15px; /* Smaller spiral */
                 background: repeating-linear-gradient(
                     to bottom,
                     transparent 0px,
@@ -202,7 +200,7 @@
             }
 
             .notebook::after {
-                left: 15px; /* Adjust spiral holes */
+                left: 12px; /* Adjust spiral holes */
                 width: 8px;
             }
         }
@@ -212,9 +210,10 @@
 <body>
     <div class="notebook">
         <div class="content">
-            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1748362459/Polaroid.jpg" alt="Leon’s Polaroid" class="polaroid">
             <p>Yo, Leon here.</p>
             <p>This page is about why you might consider joining my daily email list:</p>
+            <!-- Image placed after the second paragraph -->
+            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1748362459/Polaroid.jpg" alt="Leon’s Polaroid" class="polaroid">
             <p>Almost every time I'd visit my grandfather, we'd talk philosophy and fascinating aspects about life, including the last time I spoke with him.</p>
             <p>We would dig deep into a particular situation and realize something special together.</p>
             <p>Or he would show me a useful thing he'd created for himself which I thought was so simple and cool.</p>
@@ -237,4 +236,8 @@
         </div>
         <div class="email-form">
             <!-- EDIT HERE: Kitco script renders the email form -->
-            <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaa
+            <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaaed/index.js"></script>
+        </div>
+    </div>
+</body>
+</html>
