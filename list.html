@@ -1,148 +1,211 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Join My List | Leon Benj</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Leon's daily email newsletter.">
+    <title>Leon's Email List</title>
     <style>
+        /* General page styling */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #e6e1d9;
+            background-color: #2d3748; /* EDIT HERE: Change background color for dark mode */
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .image-container {
-            max-width: 100%;
-            margin: 0;
-        }
-        .image-container img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .last-image-wrapper {
-            position: relative;
-            max-width: 100%;
-        }
-        .signup-section {
-            position: absolute;
-            bottom: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 600px;
-            height: 40%;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            font-family: 'Source Sans Pro', Verdana, sans-serif; /* EDIT HERE: Change font */
+        }
+
+        /* Notebook container styling */
+        .notebook {
+            position: relative;
+            width: 90%; /* Ensures responsiveness */
+            max-width: 550px; /* EDIT HERE: Change max width of notebook */
+            min-height: 600px;
+            background-color: #fffdf5; /* EDIT HERE: Change paper background color */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 32px 30px 30px 70px; /* Adjusted for line alignment */
+            background-image: linear-gradient(#e2e8f0 1px, transparent 1px); /* EDIT HERE: Change line color */
+            background-size: 100% 32px; /* Matches text line height */
+            background-position: 0 12px; /* Aligns lines with text */
+            border-radius: 8px;
+            margin: 20px;
+            border: 1px solid #4a5568; /* EDIT HERE: Change border color */
+        }
+
+        /* Spiral binding effect */
+        .notebook::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 30px; /* EDIT HERE: Change spiral width */
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 18px,
+                #a0aec0 18px, /* EDIT HERE: Change spiral color */
+                #a0aec0 36px
+            );
+        }
+
+        /* Spiral holes */
+        .notebook::after {
+            content: '';
+            position: absolute;
+            left: 20px; /* EDIT HERE: Adjust spiral hole position */
+            top: 10px;
+            width: 10px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                #fffdf5 0px,
+                #fffdf5 14px,
+                #a0aec0 14px,
+                #a0aec0 22px,
+                #fffdf5 22px,
+                #fffdf5 36px
+            );
+        }
+
+        /* Text content styling */
+        .content {
+            font-size: 1.3em; /* EDIT HERE: Change body font size */
+            color: #1f2937; /* EDIT HERE: Change text color */
+            line-height: 32px; /* Matches background lines */
+        }
+
+        .content h1 {
+            font-size: 1.7em; /* EDIT HERE: Change heading font size */
+            margin: 0 0 20px;
             text-align: center;
+            color: #111827; /* EDIT HERE: Change heading color */
+            line-height: 32px;
         }
-        footer {
-            margin-top: 80px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #555;
+
+        .content p {
+            margin: 0 0 16px;
         }
-        footer hr {
-            border: 0;
-            border-top: 1px solid #555;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 600px;
+
+        .content ul {
+            padding-left: 25px;
+            margin: 16px 0;
         }
-        footer p {
+
+        .content li {
+            margin-bottom: 8px;
+            line-height: 32px;
+        }
+
+        .highlight {
+            color: #d97706; /* EDIT HERE: Change highlight color */
+            font-weight: 600;
+        }
+
+        /* Email form container styling */
+        .email-form {
+            margin-top: 20px;
             text-align: center;
-            margin: 10px 0;
+            padding: 10px; /* EDIT HERE: Adjust padding around Kitco form */
         }
-        @media (max-width: 600px) {
-            .signup-section {
-                height: 30%;
-                bottom: -5%;
+
+        /* Dark mode preference */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #2d3748;
             }
-            footer {
-                margin-top: 50px;
+            .notebook {
+                border-color: #4a5568;
+            }
+        }
+
+        /* Light mode fallback */
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #e2e8f0;
+            }
+            .notebook {
+                border-color: #cbd5e0;
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            .notebook {
+                padding: 24px 20px 20px 50px; /* Adjusted for mobile */
+                min-height: 500px;
+            }
+
+            .content h1 {
+                font-size: 1.5em;
+                line-height: 32px;
+            }
+
+            .content {
+                font-size: 1.1em;
+                line-height: 32px;
+            }
+
+            .content ul {
+                margin: 8px 0;
+            }
+
+            .email-form {
+                padding: 8px;
+            }
+
+            /* Adjust spiral for mobile */
+            .notebook::before {
+                width: 20px; /* Smaller spiral */
+                background: repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 18px,
+                    #a0aec0 18px,
+                    #a0aec0 36px
+                );
+            }
+
+            .notebook::after {
+                left: 15px; /* Adjust spiral holes */
+                width: 8px;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav-header></nav-header>
-    
-
-    
-
-    <!-- Image 1 -->
-    <div class="image-container">
-        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628223/optin1.jpg" alt="Notebook Page 1">
-    </div>
-    <!-- Image of Notebooks at the Top -->
-    <div class="image-container">
-        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747631473/notebooks.jpg" alt="Stack of Notebooks">
-    </div>
-    <!-- Image 2 -->
-    <div class="image-container">
-        <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628224/optin2.jpg" alt="Notebook Page 2">
-    </div>
-
-    <!-- Last Image with Signup Section Overlay -->
-    <div class="last-image-wrapper">
-        <div class="image-container">
-            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1747628222/optin3.jpg" alt="Notebook Page 3">
+    <div class="notebook">
+        <div class="content">
+            <p>Yo, Leon here. 
+            <p>This page is about why you might consider joining my daily email list:  
+            <p>Almost every time I'd visit my grandfather, we'd talk philosophy and fascinating aspects about life, including the last time I spoke with him.
+            <p>We would dig deep into a particular situation and realize something special together. 
+            <p>Or he would show me a useful thing he'd created for himself which I thought was so simple and cool. 
+            <p>I'd always leave with a new insight and see things differently. 
+            <p>Now that he's gone, I continued these conversations and creations in my journals and thought I could share them in a daily email so you can get a glimpse and be useful to you.
+            <p> 
+            <p>If you don't know me yet, here's a bit about me so far:
+            <ul>
+                <li>A Tesla top performer for 2.5 years</li>
+                <li>Burger-eating champion (won $500 cash)</li>
+                <li>Mechanical Engineer</li>
+                <li>Dumpling-making pro (12,100+ made, built a business around it)</li>
+                <li>Purple belt in jiu jitsu</li>
+                <li>Coached personal trainers & gym owners how to get loyal clients from Instagram for 7 years</li>
+                <li>Moved across Canada in my Tesla</li>
+            </ul>
+            <p>It's hard to say which of the above was sparked by my conversations with my grandfather but it's clear to me that I wouldn't be where I am today without them. 
+            <p>Where could you end up? 
+            <p>Sign up to my <span class="highlight">daily emails</span> to join in on the conversations and stay updated about my useful & simple projects.</p>
         </div>
-        <div class="signup-section">
+        <div class="email-form">
+            <!-- EDIT HERE: Kit script renders the email form -->
             <script async data-uid="2c17bbaaed" src="https://leonbenj.kit.com/2c17bbaaed/index.js"></script>
         </div>
     </div>
-
-    <footer>
-        <hr>
-        <p>© 2025 Leon Benjamignan.</p>
-    </footer>
 </body>
 </html>
