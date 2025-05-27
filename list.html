@@ -106,29 +106,15 @@
             font-weight: 600;
         }
 
-        /* Polaroid container (image + caption) */
-        .polaroid-container {
-            float: right; /* Floats image and caption to top right */
-            margin: 10px 10px 10px 20px; /* EDIT HERE: Adjust container margins */
-        }
-
         /* Polaroid image styling */
         .polaroid {
+            float: right; /* Floats image to top right */
             width: 150px; /* EDIT HERE: Change image width */
             height: auto;
+            margin: 10px 10px 10px 20px; /* EDIT HERE: Adjust image margins */
             border: 2px solid #4a5568; /* EDIT HERE: Change image border color */
             border-radius: 4px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            display: block; /* Ensures image behaves as a block for caption alignment */
-        }
-
-        /* Polaroid caption styling */
-        .polaroid-caption {
-            font-size: 0.9em; /* EDIT HERE: Change caption font size */
-            color: #4a5568; /* EDIT HERE: Change caption color */
-            text-align: center;
-            margin: 5px 0 0 0; /* EDIT HERE: Adjust caption margins */
-            line-height: 1.2; /* Tighter line height for caption */
         }
 
         /* Clearfix to prevent layout issues after floating image */
@@ -192,16 +178,9 @@
                 margin: 8px 0;
             }
 
-            .polaroid-container {
-                margin: 10px 10px 10px 15px; /* Adjusted margin for tighter mobile layout */
-            }
-
             .polaroid {
                 width: 120px; /* Smaller image on mobile, but keeps float: right */
-            }
-
-            .polaroid-caption {
-                font-size: 0.8em; /* Smaller caption font on mobile */
+                margin: 10px 10px 10px 15px; /* Adjusted margin for tighter mobile layout */
             }
 
             .email-form {
@@ -233,11 +212,8 @@
         <div class="content">
             <p>Yo, Leon here.</p>
             <p>This page is about why you might consider joining my daily email list:</p>
-            <!-- Image and caption placed after the second paragraph -->
-            <div class="polaroid-container">
-                <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1748362459/Polaroid.jpg" alt="Leon’s Polaroid" class="polaroid">
-                <p class="polaroid-caption">the last picture with my grandfather</p>
-            </div>
+            <!-- Image placed after the second paragraph -->
+            <img src="https://res.cloudinary.com/dkdiqzhld/image/upload/v1748362459/Polaroid.jpg" alt="Leon’s Polaroid" class="polaroid">
             <p>Almost every time I'd visit my grandfather, we'd talk philosophy and fascinating aspects about life, including the last time I spoke with him.</p>
             <p>We would dig deep into a particular situation and realize something special together.</p>
             <p>Or he would show me a useful thing he'd created for himself which I thought was so simple and cool.</p>
