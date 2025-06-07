@@ -1,0 +1,458 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Get Leon's Tracker, a simple spreadsheet to take control of your finances.">
+
+    <title>Leon's Money Tracker - Take Control of Your Finances</title>
+
+    <!-- CSS Styles -->
+
+    <style>
+        /* General page styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2d3748; /* Dark mode background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Source Sans Pro', Verdana, sans-serif;
+        }
+
+        /* Graph paper container styling */
+        .notebook {
+            position: relative;
+            width: 90%;
+            max-width: 550px;
+            min-height: 600px;
+            background-color: #f5f7f5; /* Light green-tinted graph paper base */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 32px 30px 30px 70px;
+            background-image: 
+                linear-gradient(#eff1f5 1px, transparent 1px),
+                linear-gradient(90deg, #eff1f5 1px, transparent 1px); /* Very light graph paper grid */
+            background-size: 20px 20px; /* 20x20px grid */
+            background-position: 0 0;
+            border-radius: 8px;
+            margin: 20px;
+            border: 1px solid #4a5568;
+        }
+
+        /* Spiral binding effect */
+        .notebook::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 18px,
+                #a0aec0 18px,
+                #a0aec0 36px
+            );
+        }
+
+        /* Spiral holes */
+        .notebook::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 10px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                #f5f7f5 0px,
+                #f5f7f5 14px,
+                #a0aec0 14px,
+                #a0aec0 22px,
+                #f5f7f5 22px,
+                #f5f7f5 36px
+            );
+        }
+
+        /* Text content styling */
+        .content {
+            font-size: 1.3em;
+            color: #1f2937;
+            line-height: 32px;
+        }
+
+        .content h1 {
+            font-size: 1.7em;
+            margin: 0 0 20px;
+            text-align: center;
+            color: #111827;
+            line-height: 32px;
+            /* Removed text-transform: uppercase; to allow title case */
+        }
+
+        .content h2 {
+            font-size: 1.4em;
+            margin: 20px 0 10px;
+            color: #111827;
+            line-height: 32px;
+        }
+
+        .content p {
+            margin: 0 0 16px;
+        }
+
+        .content ul {
+            padding-left: 25px;
+            margin: 16px 0;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+            line-height: 32px;
+        }
+
+        /* Checkmark list styling for last bullet section */
+        .checkmark-list {
+            list-style: none;
+            padding-left: 25px;
+        }
+
+        .checkmark-list li::before {
+            content: '✔';
+            color: #d97706; /* Orange checkmark */
+            font-size: 1.2em;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+        }
+
+        .highlight {
+            color: #d97706; /* Orange highlight */
+            font-weight: 600;
+        }
+
+        .bold-bullet {
+            font-weight: 600;
+        }
+
+        /* CTA button styling */
+        .cta-button {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .cta-button a {
+            display: inline-block;
+            background-color: #d97706; /* Orange button */
+            color: #f5f7f5;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button a:hover {
+            background-color: #b35900; /* Darker orange on hover */
+        }
+
+        /* Warning note styling */
+        .warning {
+            font-size: 0.9em;
+            color: #d97706;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Dark mode preference */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #2d3748;
+            }
+            .notebook {
+                border-color: #4a5568;
+            }
+        }
+
+        /* Light mode fallback */
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #e2e8f0;
+            }
+            .notebook {
+                border-color: #cbd5e0;
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            .notebook {
+                padding: 24px 20px 20px 40px;
+                min-height: 500px;
+            }
+
+            .content h1 {
+                font-size: 1.5em;
+                line-height: 32px;
+            }
+
+            .content h2 {
+                font-size: 1.2em;
+                line-height: 32px;
+            }
+
+            .content {
+                font-size: 1.1em;
+                line-height: 32px;
+            }
+
+            .content ul, .checkmark-list {
+                margin: 8px 0;
+            }
+
+            .cta-button {
+                padding: 8px;
+            }
+
+            .cta-button a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            /* Adjust spiral for mobile */
+            .notebook::before {
+                width: 15px;
+                background: repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 18px,
+                    #a0aec0 18px,
+                    #a0aec0 36px
+                );
+            }
+
+            .notebook::after {
+                left: 12px;
+                width: 8px;
+            }
+        }
+    </style>
+
+    <!-- Font import -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main content container -->
+
+    <div class="notebook">
+
+        <div class="content">
+
+            <!-- Headline -->
+
+            <h1>Do Not Read This Unless You Are Frustrated As Hell With Your Finances</h1>
+
+            <!-- Introduction -->
+
+            <p>My name is Leon Benjamignan and, the first thing you should know about me is... I am not a financial advisor.  I'm not an expert on money either.  I never went to business school and I don't have a degree in anything related remotely to finances.  In fact, the only thing I consider myself an 'expert' about is in <span class="highlight">spreadsheets</span>.</p>
+
+            <p>I used to think, "if I'm just making money regularly, I should be okay," but as things got complicated with moving and emergency expenses, it wasn't as straight-forward anymore. Then one day, I had an idea on how to keep track of it all and it's been working for me since - and it might just work for you.</p>
+
+            <p>Here's the quick story:</p>
+
+            <!-- Story -->
+
+            <p>Over a year ago, I planned to move from Quebec to British Colombia - away from all my family and friends.  To my shock, I got laid off 3 months before my moving date.  Strike 1.  My plans were shaken but I was dedicated to move anyway.  As I arrived, my car insurance nearly tripled.  Strike 2.  My rent? Practically doubled.  Strike 3!</p>
+
+            <h2 style="text-align: center;">I felt the pressure of totally being on my own.</h2>
+
+            <p>Later, I secured a contract job (a breath of fresh air!).  But then, my cat got very sick which lead to the most expensive way a doctor could tell me it was stress (even after getting a second and third opinion to rule anything out)... 
+            
+            <p>So i sucked it up and put matters into my hands. I had to take care of my family. No turning back as I made it that far. I grounded myself in <span class="highlight">reality</span>.  How long could I support my family financially?</p>
+
+            <p>I leaned on my strength in spreadsheets.  As painful as it was to do the first time, I organized a way to calculate all my money in a spreadsheet to <span class="highlight">know exactly how long I could survive</span>.</p>
+
+            <p>After my first full entry, I sighed in relief.  A deep sense of <span class="highlight">confidence</span> grew within me. I knew exactly where I stood.  All these months of stress and tension of flying blind instantly disappeared.  I designed my spreadsheet so I could update it anytime and see my progress.  
+            
+            <p>Did it work?  
+            <p>It sure did!</p>
+
+            <p>A few weeks of this habit later, I spotted how I could improve my situation.  I actioned those ideas.  I secured a job.  I eliminated <span class="highlight">$53,000</span> of debt by selling my car.  My savings rate increased.  I didn't even want to spend more to screw up my upward trends... and it kept going where I wanted it to.I understood that <span class="highlight">I controlled </span>my flow of money.</p>
+
+            <p>That's when I realized my tracker wasn't just tracking my numbers...
+            
+            <h2 style="text-align: center;"> I was building a life of freedom and control because of it.</h2>
+
+            <p>And now, I've made a version so that you can do the same.</p>
+
+            <p> 
+
+            <!-- Features -->
+
+            <h2>Here's what it's all about:</h2>
+
+            <ul>
+
+                <li>Know all your key numbers by entering a few numbers in a spreadsheet. Plug-and-play and it will calculate the rest for you. No math required on your part.</li>
+
+                <li class="bold-bullet">Once you know where to check for your numbers in your accounts, it takes between <span class="highlight">5 to 15 minutes</span> per week to fill out.</li>
+
+                <li><span class="highlight">Pay once, track forever.</span> No recurring payments or subscriptions or pressure to have you use it.</li>
+
+                <li>You'll know: your monthly expenses, monthly income, savings potential, number of months of living expenses saved, when you'll hit your savings target, rolling averages of each, and more - it's all personalized based on your real numbers and lifestyle throughout the year.</li>
+
+                <li>Track your debt over time too - so you can laser in on your progress towards eliminating it. (useful if you have any debt right now, or in the future)</li>
+
+            </ul>
+
+            <!-- Placeholder for headline after 5th bullet -->
+
+            <h2>Become aware of your money rhythms.</h2>
+
+            <ul>
+
+                <li class="bold-bullet">The more you track, the clearer picture it will paint. You'll see common fluctuations based on when you get paid vs doing groceries or any big expenses, etc. (the <span class="highlight">summary page</span> shows you this).</li>
+
+                <li>Track your net worth (from <span class="highlight">day one</span>).</li>
+
+                <li class="bold-bullet">Ability to export your data easily for external analysis: so you can show it to your accountant, financial advisor, or to any Artificial Intelligence (if you swing that way).</li>
+
+                <li>Know your burn rate: how much is your lifestyle costing you? You'll be able to know if you're on track towards your goal - or just to become aware of it. Are you in the negative or stagnating and you don't even know it? Here's your chance to find out.</li>
+            </ul>
+            <p>You can implement common financial advice such as the <span class="highlight">70/20/10 rule</span>- where 70% of your income goes towards living expenses, 20% to savings, 10% to debt repayment. 
+            
+            <p>You can finally visualize those percentages with your actual numbers - even if you're just curious.</p>
+
+            <!-- Placeholder for headline after 10th bullet -->
+
+            <h2><!-- Add your headline here --></h2>
+
+            <ul>
+
+                <li>Spot your trends early so you can adjust your money habits (I saved <span class="highlight">thousands of dollars</span> already this way)</li>
+
+                <li class="bold-bullet">Discover your savings rate based on your current lifestyle... and every month moving forward. (The earlier you start, the better. And you'll be able to compare your history as well.)</li>
+
+                <li>Should you hold off on buying a big ticket item? You can make an educated decision on the timing of it since you'll see your cash flow with this.</li>
+
+                <li class="bold-bullet">Your chance to develop a simple habit of managing money so that you'll be aware of how more earnings will impact you. (Note: this is NOT a money management course where I teach you, but a tool to track your money and you'll be able to develop your own strategies.)</li>
+
+                <li>You'll even know when its time to do a check-in. You’ll see a <span class="highlight">warning</span> at the top of the summary page if it’s recommended to do a check in or not.</li>
+
+            </ul>
+
+            <!-- Placeholder for headline after 15th bullet -->
+
+            <h2>Just a few more benefits for you... </h2>
+
+            <ul>
+
+                <li>Rewire your mind around money. You might think this process seems boring. Most long-term advice is boring. Because boring works. Money is boring. Once you grasp the power of what you are building, I think you will realize how exciting long-term money can become.</li>
+
+                <li>You are buying directly from the creator who cares and wants this to be as useful for you as it was for them. I personally use this version weekly and will guide you if you have any questions about it or using it. (happy to create custom trainings around it for easier use)</li>
+
+                <li class="bold-bullet">How to view the history of your bank account statistics without connecting them to this tracker. No bank login connections needed - so your money stays <span class="highlight">untouchable</span>.</li>
+
+            </ul>
+
+            <p>And no automatic data imports from your bank either - which means no more erroneous duplicate entries to mess up your stats or worries about broken connections. You will need to manually check your bank accounts, and enter some data. I do this regularly and it does NOT take as long as you might think. (I even did it when I had 6% battery left and it took less than 5 mins). Once you know where to look, it is a simple in-and-out and you'll know all your key numbers.</p>
+
+            <!-- Not for Everyone Section -->
+
+            <h2>As you can see, this tracker is NOT for everyone.</h2>
+
+            <p>This is NOT for those who don't like Google - as this version relies on Google Sheets. Not all the formulas are compatible with other spreadsheet software yet - but I plan on adding this functionality in the future. If you prefer NOT to buy this now and wait for this feature, that's fine - let me know which you might prefer.</p>
+
+            <p>This is also NOT for those who want an automatic-import way of tracking money. This is intentional for a few reasons:</p>
+
+            <ul class="checkmark-list">
+
+                <li>For one, you'll have <span class="highlight">full control</span> of your data. Software and service providers change, break or shut down all the time.  If you want longevity with your important numbers, using a format that stands the test of time for numbers, makes the most sense (in my opinion anyway). You can export your data to other apps later on if you want. This can be the home-base and manipulate your data elsewhere.</li>
+
+                <li class="bold-bullet">Reason #2, you'll avoid sync issues from auto-imports which can mess things up if there are duplicate data. Especially when transferring money from one account to the other. When I was with Tangerine bank, I had auto-transfers on and it would mess all my income numbers in Mint at the time. No more of that.</li>
+
+                <li>And finally, I think it's a mistake to use those auto-import apps since it adds a <span class="highlight">disconnect</span> between you and your numbers. Forcing you to check your accounts, review your spending and your income is a good thing. This is by design. It's a way of auditing yourself now instead of waiting for a big surprise down the line when shit hits the fan. The more you do these check-ins, the faster it becomes, and soon, it will only take you like 5-15 minutes per week, tops. If you can't manage that, then you should not bother getting this. I'm sure there is another app or tool out there for you. Will you use it regularly? Or will you input your data once and forget about it? If you can bring that effort, you will be set to track your numbers forever in a simple way I've arranged for you.</li>
+
+            </ul>
+
+            <!-- Offer Section -->
+
+            <h2>Okay, so here's the deal.</h2>
+
+            <p>You can get my finance tracker today for <span class="highlight">only $30</span>. That's it. The price will go up in the future as we tighten things up with it.</p>
+
+            <p>You'll get access to make a copy of my spreadsheet along with a <span class="highlight">Quickstart Guide</span> (which I'll be updating with my best practices in the coming weeks). As this is the early release version, you may encounter some errors as you fill out the sheet - so I've made a <span class="highlight">form</span> you can fill out to share what's going on and I can help resolve it. Give me 48 hours and I'll do my best to review and find a solution.  All I ask in this stage is provide any feedback as you use it. It's the only way I can improve it.</p>
+
+            <p>So, here's your chance at building your money habit which grows with you over the long-term. The earlier you start, the sooner you will realize you needed it. Counting your money doesn't have to be difficult. It is within your reach. I've designed it to be simple, and did all the math and simple tables for you. You'll get to the bottom of “what's really going on with my money” question and you'll know exactly how to count it.</p>
+
+            <p>Here's how to order:</p>
+
+            <p>Click the link below to get to the order page and enter your details to proceed.  Note that there are <span class="highlight">NO refunds. All sales are final</span> due to the nature of digital files. Please make sure you are okay with that before proceeding.</p>
+
+            <p class="warning">If you have any questions, feel free to ask before.</p>
+
+            <p>To your success,<br>Leon</p>
+
+        </div>
+
+        <!-- Call to Action Button -->
+
+        <div class="cta-button">
+
+            <a href="https://leonbenj.thrivecart.com/tracker/">Get Leon's Tracker Here</a>
+
+        </div>
+
+    </div>
+</body>
+</html>
