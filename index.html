@@ -25,6 +25,26 @@
                 margin: 6px 0 16px 16px;
             }
         }
+
+        /* Slimmer CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: #0ea5e9;
+            color: white;
+            padding: 14px 32px;     /* Reduced padding */
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #0284c8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.5);
+        }
     </style>
 
 </head>
@@ -78,11 +98,11 @@ Trust + energy + reliability. Basically I am the guy who gets the important jobs
             <li>What made you reach out?</li>
         </ol>
 
-        <p style="margin-top: 1.5rem;">
-        <a href="mailto:leon.benjamignan@hey.com?subject=Explore%20working%20together%20with%20Leon&body=Hi%20Leon%2C%0D%0A%0D%0A1.%20The%20biggest%20challenge%20I%20need%20help%20with%20right%20now%20is%3A%0D%0A%0D%0A%0D%0A2.%20What%20made%20me%20reach%20out%20to%20you%20is%3A%0D%0A%0D%0A%0D%0A" 
-           style="font-size: 1.2rem; font-weight: bold; text-decoration: none;">
-               >> 📧 Email me to get started <<
-            </a>
+        <p style="margin-top: 2rem; text-align: center;">
+        <a href="mailto:leon.benjamignan@hey.com" 
+           class="cta-button">
+           📧 Email me to get started
+        </a>
         </p>
 
 

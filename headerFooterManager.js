@@ -4,7 +4,6 @@ class NavHeader extends HTMLElement {
         <h1><a href='/'>Leon Benjamignan</a></h1>
         <nav class="navbar">
         <ul>
-            <li><a href="/">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
             <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
             <li><a href="speaking.html">Speaking</a></li>
