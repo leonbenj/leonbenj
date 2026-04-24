@@ -5,11 +5,36 @@
 <title>Home | Leon Benj</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+
+<style>
+        .profile-pic {
+            float: right;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Make it responsive on mobile */
+        @media (max-width: 600px) {
+            .profile-pic {
+                float: none;
+                display: block;
+                margin: 20px auto;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
 <nav-header></nav-header>
 <script src="./headerFooterManager.js"></script>
+
+<img src="docs/assets/leon.jpg" alt="Leon Benjamignan" class="profile-pic">
+
 <h2>About Me in 30 seconds</h2>
 <p>
 I love business, fundamentals, and turning ideas into reality with high urgency. 
