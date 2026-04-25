@@ -7,9 +7,9 @@ class NavHeader extends HTMLElement {
             <li><a href="/">Home</a></li>
             <li><a href="now.html">Now</a></li>
             <li><a href="experience.html">Experience</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
             <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
             <li><a href="speaking.html">Speaking</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
         </ul>
         </nav>
         <hr>
