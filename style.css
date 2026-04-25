@@ -5,114 +5,104 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   line-height: 1.6em;
-  background-color: #15202b;
-  color: #e7e9ea;
+  background-color: #1C1B1A;
+  color: #E6E4D9;
 }
 
+/* Blue accent color */
 :link, :visited {
-  color: #80bfff; /* A lighter shade of blue for better visibility */
+  color: #0ea5e9;
   text-decoration: none;
 }
 
 :link:hover, :visited:hover {
+  color: #38bdf8;
   text-decoration: underline;
 }
 
-.testimonial {
-  border: 1px solid #38444d;
-  background-color: #192734;
-  padding: 10px;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
+/* Cards */
+.testimonial,
 .project {
-  border: 1px solid #38444d;
-  background-color: #192734;
-  padding: 10px;
+  border: 1px solid #403E3C;
+  background-color: #282726;
+  padding: 20px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #E6E4D9;
 }
 
+/* CTA */
 .cta {
-  border: 5px solid #1da1f2;
-  background-color: #253341;
-  color: #ffffff;
+  border: 5px solid #0ea5e9;
+  background-color: #282726;
+  color: #E6E4D9;
   padding: 30px;
   margin-bottom: 20px;
 }
 
 button, .button {
-  background-color: #1da1f2;
+  background-color: #0ea5e9;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 button:hover, .button:hover {
-  opacity: 0.8;
-}
-
-h1, h2, h3 {
-  color: #ffffff;
-}
-
-input, textarea {
-  background-color: #253341;
-  border: 1px solid #38444d;
-  color: #ffffff;
-}
-
-.navbar ul{
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-
-}
-
-.navbar li{
-  float: left;
-}
-
-.navbar a{
-  text-decoration: none;
-  padding: 15px;
-  display: block;
-  text-align: center;
-}
-
-.navbar a:hover{
-  background-color: #293f53;
-}
-
-
-.collapsible {
-  background-color: #192734;
+  background-color: #38bdf8;
   color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-bottom: 10px;
 }
 
-.active, .collapsible:hover {
-  background-color: #253341;
+/* Headings */
+h1, h2, h3 {
+  color: #E6E4D9;
 }
 
-.collapsible-content {
-  padding: 0 18px;
-  background-color: #15202b;
-  max-height: 0;
+/* Navbar */
+.navbar a {
+  color: #E6E4D9;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background-color: #403E3C;
+  color: #38bdf8;
+}
+
+h1 a {
+  color: #E6E4D9;
+}
+
+/* Form elements */
+input, textarea {
+  background-color: #282726;
+  border: 1px solid #403E3C;
+  color: #E6E4D9;
+}
+
+/* General navbar layout */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+}
+.navbar li { float: left; }
+.navbar a { padding: 15px 18px; display: block; text-align: center; }
+
+/* === NAVBAR - Make links clearly clickable === */
+.navbar a {
+  color: #0ea5e9;           /* Bright blue accent */
+  font-weight: 500;
 }
 
-.collapsible-content.active {
-  max-height: 500px; /* Adjust this value based on content */
+.navbar a:hover {
+  background-color: #403E3C;
+  color: #38bdf8;           /* Slightly brighter blue on hover */
+}
+
+/* Keep the site logo/name in the warm off-white */
+h1 a {
+  color: #E6E4D9;
 }
