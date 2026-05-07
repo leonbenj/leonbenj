@@ -32,6 +32,23 @@
         .about-container li {
             margin-bottom: 0.8rem;
         }
+        .about-cta {
+            display: inline-block;
+            background: #4385BE;
+            color: white;
+            padding: 16px 36px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(67, 133, 190, 0.45);
+            transition: all 0.3s ease;
+        }
+        .about-cta:hover {
+            background: #2E6B9E;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(46, 107, 158, 0.55);
+        }
     </style>
 </head>
 <body>
@@ -64,9 +81,17 @@
             <strong>Right now I'm especially excited about</strong> project leadership, operational efficiency, and strategic roles where collaboration and ownership matter.
         </p>
 
-        <div style="text-align: center; margin: 4.5rem 0 2rem;">
-            <a href="mailto:leon.benjamignan@hey.com" class="cta-button">Let's talk →</a>
+        <!-- FINAL CTA -->
+        <div style="text-align: center; margin: 4.5rem 0 1.5rem;">
+            <a href="mailto:leon.benjamignan@hey.com" class="about-cta">
+                Let's Talk →
+            </a>
         </div>
+
+        <p style="text-align: center; margin-bottom: 4rem; font-size: 1.05rem; color: #B8B5AC;">
+            Not ready yet? See what leaders, peers and customers say about me.<br>
+            <a href="recommendations.html" style="color: #4385BE; text-decoration: underline;">View recommendations →</a>
+        </p>
     </div>
 
     <cta-footer></cta-footer>
