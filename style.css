@@ -1,12 +1,16 @@
 body {
-  max-width: 40em;
+  max-width: 44em;
   margin: 0 auto;
   padding: 5px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.8em;
-  background-color: #252422;
+  font-size: 19px;
+  line-height: 1.9em;
+  background-color: #272522;
   color: #E6E4D9;
+}
+
+p {
+  margin-bottom: 1.15em;
 }
 
 /* === NEW BLUE ACCENT (your requested color) === */
@@ -25,8 +29,8 @@ body {
 .project {
   border: 1px solid #403E3C;
   background-color: #282726;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 22px;
+  margin-bottom: 22px;
   color: #E6E4D9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
@@ -59,19 +63,19 @@ button:hover, .button:hover {
 h1, h2, h3 {
   color: #E6E4D9;
   font-weight: 700;
-  line-height: 1.3;
-  margin-top: 2.2rem;
-  margin-bottom: 1rem;
+  line-height: 1.35;
+  margin-top: 2.5rem;
+  margin-bottom: 1.1rem;
 }
 
-h1 { font-size: 2.1rem; margin-top: 1.8rem; }
-h2 { font-size: 1.65rem; }
-h3 { font-size: 1.35rem; }
+h1 { font-size: 2.15rem; margin-top: 1.6rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.4rem; }
 
 /* Extra separation after big sections */
 h1 + p,
 h2 + p {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 
 /* === NAVBAR - Clearly clickable (different from body text) === */
