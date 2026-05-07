@@ -127,42 +127,55 @@
             .hero {
                 flex-direction: row;
                 align-items: flex-start;
-                gap: 1.5rem;
-                padding: 2rem 1rem;
+                gap: 1.2rem;
+                padding: 1.8rem 1rem;
             }
             .hero-text h1 {
-                font-size: 1.85rem;
+                font-size: 1.75rem;
                 line-height: 1.15;
             }
             .hero-text .tagline {
-                font-size: 1rem;
-                margin-bottom: 1.2rem;
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
             }
             .hero-image {
-                width: 140px;
-                height: 175px;
+                width: 155px;
+                height: 195px;
                 flex-shrink: 0;
             }
             .stats {
                 justify-content: center;
-                gap: 1.5rem;
-                margin: 2rem 0;
+                gap: 1.3rem;
+                margin: 1.8rem 0;
             }
             .section {
-                margin: 3rem 0;
+                margin: 2.8rem 0;
+            }
+
+            /* Make nav more compact on mobile */
+            nav-header h1 {
+                font-size: 1.35rem;
+            }
+            .navbar a {
+                padding: 8px 10px;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero {
-                gap: 1rem;
+                gap: 0.9rem;
             }
             .hero-text h1 {
-                font-size: 1.65rem;
+                font-size: 1.55rem;
             }
             .hero-image {
-                width: 115px;
-                height: 145px;
+                width: 130px;
+                height: 165px;
+            }
+            .navbar a {
+                padding: 6px 8px;
+                font-size: 0.85rem;
             }
         }
     </style>
