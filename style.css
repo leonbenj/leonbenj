@@ -4,8 +4,8 @@ body {
   padding: 5px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
-  line-height: 1.6em;
-  background-color: #1C1B1A;
+  line-height: 1.8em;
+  background-color: #252422;
   color: #E6E4D9;
 }
 
@@ -28,6 +28,7 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   color: #E6E4D9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 /* CTA */
