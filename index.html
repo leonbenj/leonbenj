@@ -67,10 +67,6 @@
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
-        .value-card h3 {
-            margin-top: 0;
-            color: #4385BE;
-        }
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -124,6 +120,45 @@
             font-size: 1rem;
             color: #B8B5AC;
             margin-top: 0.4rem;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 2rem;
+                padding: 2.5rem 1rem 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-text .tagline {
+                font-size: 1.15rem;
+                max-width: 100%;
+            }
+            .hero-image {
+                width: 220px;
+                height: 260px;
+                margin: 0 auto;
+            }
+            .stats {
+                justify-content: center;
+                gap: 1.8rem;
+            }
+            .section {
+                margin: 3.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.95rem;
+            }
+            .hero-image {
+                width: 180px;
+                height: 220px;
+            }
         }
     </style>
 </head>
