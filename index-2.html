@@ -30,9 +30,9 @@
         }
         .hero-image {
             flex-shrink: 0;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
+            width: 340px;
+            height: 380px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             border: 8px solid #282726;
@@ -41,6 +41,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
         }
         .section {
             margin: 5rem 0;
@@ -133,7 +134,7 @@
     <!-- HERO SECTION -->
     <div class="hero">
         <div class="hero-text">
-            <h1>Turning messy problems<br>into scalable systems.</h1>
+            <h1>Turning messy problems<br>into scalable systems<br>that have real impact.</h1>
             <p class="tagline">
                 14+ years building, leading, and scaling at Tesla and as a founder. 
                 I bring clarity, urgency, and results.
@@ -142,7 +143,7 @@
         </div>
         <div class="hero-image">
             <img src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/011919%20-%20Leon-8.jpg" 
-                 alt="Léon Benjamignan" style="width: 100%; height: 100%; object-fit: cover;">
+                 alt="Léon Benjamignan" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
         </div>
     </div>
 
@@ -213,9 +214,17 @@
         </div>
     </div>
 
-    <div style="text-align: center; margin: 5rem 0 3rem;">
-        <a href="mailto:leon.benjamignan@hey.com" class="cta-button">Let’s work together →</a>
+    <!-- FINAL CTA -->
+    <div style="text-align: center; margin: 5rem 0 2rem; max-width: 520px; margin-left: auto; margin-right: auto;">
+        <a href="mailto:leon.benjamignan@hey.com" class="cta-button">
+            Send me an email describing your biggest challenge →
+        </a>
     </div>
+
+    <p style="text-align: center; margin-bottom: 4rem; font-size: 1.05rem;">
+        Want to learn more about my background first?<br>
+        <a href="experience.html" style="color: #4385BE; text-decoration: underline;">View my experience →</a>
+    </p>
 
     <cta-footer></cta-footer>
     <script src="./headerFooterManager.js"></script>
