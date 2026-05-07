@@ -1,7 +1,7 @@
 class NavHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <h1><a href='/'>Leon Benjamignan</a></h1>
+        <h1><a href='/about.html'>Leon Benjamignan</a></h1>
         <nav class="navbar">
         <ul>
             <li><a href="/">Home</a></li>
@@ -22,7 +22,7 @@ class CtaFooter extends HTMLElement {
         this.innerHTML = `
 <footer>
 <hr>
-<p>© 2026 <a href="/">Leon Benjamignan</a> — 
+<p>© 2026 <a href="/about.html">Leon Benjamignan</a> — 
    <a href="https://world.hey.com/leon.benjamignan">Read my blog</a>
 </p>
 </footer>
