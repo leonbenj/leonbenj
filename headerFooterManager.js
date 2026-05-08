@@ -2,7 +2,7 @@ class NavHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div class="nav-wrapper">
-            <h1><a href="/about.html">Leon Benjamignan</a></h1>
+            <h1><a href="/">Leon Benjamignan</a></h1>
             
             <!-- Desktop Nav -->
             <nav class="navbar desktop-nav">
@@ -13,6 +13,7 @@ class NavHeader extends HTMLElement {
                     <li><a href="recommendations.html">Recommendations</a></li>
                     <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
                     <li><a href="speaking.html">Speaking</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
 
@@ -32,6 +33,7 @@ class NavHeader extends HTMLElement {
                     <li><a href="recommendations.html">Recommendations</a></li>
                     <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
                     <li><a href="speaking.html">Speaking</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </div>
