@@ -122,6 +122,18 @@
             color: #B8B5AC;
             margin-top: 0.4rem;
         }
+        .build-header {
+            font-size: 2rem;
+            color: #E6E4D9;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .nav-divider {
+            border: none;
+            height: 1px;
+            background: #403E3C;
+            margin: 0;
+        }
 
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
@@ -160,22 +172,11 @@
             .section-header {
                 margin-bottom: 1.2rem;
             }
-
-            /* Reduce padding on cards for mobile */
             .value-card {
                 padding: 1.3rem;
             }
             .work-card {
                 padding: 1.2rem;
-            }
-
-            /* Compact nav */
-            nav-header h1 {
-                font-size: 1.3rem;
-            }
-            .navbar a {
-                padding: 7px 9px;
-                font-size: 0.88rem;
             }
         }
 
@@ -209,16 +210,19 @@
 <body>
 
     <nav-header></nav-header>
+    <hr class="nav-divider">
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (BOLD + HIGH-ENERGY VERSION) -->
     <div class="hero">
         <div class="hero-text">
-            <h1>Turning messy problems<br>into scalable systems<br>with real impact.</h1>
+            <h1>"Leon turns chaos into scalable systems<br>that actually work."</h1>
+            
             <p class="tagline">
                 14+ years building, leading, and scaling at Tesla and as a founder. 
-                I bring clarity, urgency, and results.
+                I bring clarity, urgency, and real results under pressure.
             </p>
-            <a href="experience.html" class="cta-button">See my impact →</a>
+            
+            <a href="experience.html" class="cta-button">See my work →</a>
         </div>
         <div class="hero-image">
             <img src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/011919%20-%20Leon-8.jpg" 
@@ -272,7 +276,7 @@
             Promoted multiple times while building and leading high-impact initiatives across Canada.
         </p>
         <div style="margin-top: 2rem;">
-            <a href="experience.html" class="cta-button" style="font-size: 1.1rem; padding: 14px 28px;">View my full Tesla experience →</a>
+            <a href="experience.html" class="cta-button" style="font-size: 1.1rem; padding: 14px 28px;">View full Tesla experience →</a>
         </div>
     </div>
 
@@ -295,16 +299,19 @@
 
     <!-- FINAL CTA -->
     <div style="text-align: center; margin: 5rem 0 2rem; max-width: 580px; margin-left: auto; margin-right: auto;">
+        <h2 class="build-header">Let's build together</h2>
+        
         <p style="margin-bottom: 1.2rem; font-size: 1.15rem; color: #B8B5AC; line-height: 1.5;">
-            Let's explore working together. Send me an email describing your biggest challenge right now and let's see what we can do:
+            Send me an email describing your biggest challenge right now and let's see what we can do:
         </p>
+        
         <a href="mailto:leon.benjamignan@hey.com" class="cta-button">
             Email Me
         </a>
     </div>
 
     <p style="text-align: center; margin-bottom: 4rem; font-size: 1.05rem;">
-        Want to learn more about my background first? <a href="experience.html" style="color: #4385BE; text-decoration: underline;">See my impact →</a>
+        Want to learn more about my background first? <a href="experience.html" style="color: #4385BE; text-decoration: underline;">View my experience →</a>
     </p>
 
     <cta-footer></cta-footer>
