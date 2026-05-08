@@ -12,7 +12,6 @@ class NavHeader extends HTMLElement {
                     <li><a href="experience.html">Experience</a></li>
                     <li><a href="recommendations.html">Recommendations</a></li>
                     <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
-                    <li><a href="speaking.html">Speaking</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
@@ -32,7 +31,6 @@ class NavHeader extends HTMLElement {
                     <li><a href="experience.html">Experience</a></li>
                     <li><a href="recommendations.html">Recommendations</a></li>
                     <li><a href="https://world.hey.com/leon.benjamignan">Blog</a></li>
-                    <li><a href="speaking.html">Speaking</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
