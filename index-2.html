@@ -27,6 +27,7 @@
             color: #B8B5AC;
             margin-bottom: 2rem;
             max-width: 28em;
+            line-height: 1.4;
         }
         .hero-image {
             flex-shrink: 0;
@@ -42,6 +43,13 @@
             height: 100%;
             object-fit: cover;
             object-position: top;
+        }
+        .positioning {
+            font-size: 1.1rem;
+            color: #5A9BD4;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
         }
         .section {
             margin: 5rem 0;
@@ -66,10 +74,6 @@
         .value-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-        .value-card h3 {
-            margin-top: 0;
-            color: #4385BE;
         }
         .work-grid {
             display: grid;
@@ -125,20 +129,104 @@
             color: #B8B5AC;
             margin-top: 0.4rem;
         }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 1.2rem;
+                padding: 1.8rem 1rem;
+            }
+            .hero-text h1 {
+                font-size: 1.65rem;
+                line-height: 1.2;
+            }
+            .hero-text .tagline {
+                font-size: 0.92rem;
+                margin-bottom: 0.9rem;
+                line-height: 1.35;
+            }
+            .hero-image {
+                width: 145px;
+                height: 185px;
+                flex-shrink: 0;
+            }
+            .cta-button {
+                padding: 12px 26px;
+                font-size: 1rem;
+            }
+            .stats {
+                justify-content: center;
+                gap: 1.2rem;
+                margin: 1.5rem 0;
+            }
+            .section {
+                margin: 1.8rem 0;
+            }
+            .section-header {
+                margin-bottom: 1.2rem;
+            }
+            .value-card {
+                padding: 1.3rem;
+            }
+            .work-card {
+                padding: 1.2rem;
+            }
+
+            /* Compact nav */
+            nav-header h1 {
+                font-size: 1.3rem;
+            }
+            .navbar a {
+                padding: 7px 9px;
+                font-size: 0.88rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                gap: 0.85rem;
+            }
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+            .hero-image {
+                width: 125px;
+                height: 160px;
+            }
+            .cta-button {
+                padding: 10px 22px;
+                font-size: 0.95rem;
+            }
+            .value-card {
+                padding: 1.1rem;
+            }
+            .work-card {
+                padding: 1rem;
+            }
+            .section {
+                margin: 1.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav-header></nav-header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (BOLD + HIGH-ENERGY VERSION) -->
     <div class="hero">
         <div class="hero-text">
-            <h1>Turning messy problems<br>into scalable systems<br>with real impact.</h1>
+            <div class="positioning">Operator • Builder • High-urgency problem solver</div>
+            
+            <h1>Turning chaos into scalable systems<br>that actually work.</h1>
+            
             <p class="tagline">
                 14+ years building, leading, and scaling at Tesla and as a founder. 
-                I bring clarity, urgency, and results.
+                I bring clarity, urgency, and real results under pressure.
             </p>
+            
             <a href="experience.html" class="cta-button">See my work →</a>
         </div>
         <div class="hero-image">
@@ -154,7 +242,7 @@
             <div class="stat-label">Years at Tesla</div>
         </div>
         <div class="stat">
-            <div class="stat-number">15k+</div>
+            <div class="stat-number">24k+</div>
             <div class="stat-label">Customers helped</div>
         </div>
         <div class="stat">
