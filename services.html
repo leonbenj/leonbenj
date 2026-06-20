@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services • Leon Benjamignan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #111827;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+        }
+
+        .service-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .nav-active {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .value-pill {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+    <!-- Navbar -->
+    <nav class="border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <a href="https://leonbenj.com" class="flex items-center gap-x-2">
+                    <span class="text-xl font-semibold tracking-tight">Leon Benjamignan</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="https://leonbenj.com" class="hover:text-slate-600 transition-colors">Home</a>
+                <a href="https://leonbenj.com/experience.html" class="hover:text-slate-600 transition-colors">Experience</a>
+                <a href="https://leonbenj.com/services.html" class="text-slate-900 font-medium">Services</a>
+                <a href="https://leonbenj.com/blog.html" class="hover:text-slate-600 transition-colors">Writing</a>
+            </div>
+            <div>
+                <a href="#book" 
+                   class="px-5 py-2.5 text-sm font-medium bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition-colors">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-4xl mx-auto px-6 pt-16 pb-12">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl leading-none tracking-tighter font-semibold heading-font">
+                I help small and medium business owners turn messy sales and operations into simple systems.
+            </h1>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl">
+                Each engagement is designed to uncover opportunities or create impact worth significantly more than the investment.
+            </p>
+            
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#book" 
+                   class="inline-flex items-center justify-center px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-2xl transition-all active:scale-[0.985]">
+                    Book a Strategy Call — $195
+                </a>
+                <a href="#audit" 
+                   class="inline-flex items-center justify-center px-6 py-3.5 border border-slate-200 hover:bg-slate-50 text-sm font-medium rounded-2xl transition-all">
+                    Start with the Audit
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="max-w-5xl mx-auto px-6 py-12 border-t border-slate-100">
+        <div class="max-w-2xl mb-10">
+            <h2 class="text-3xl font-semibold tracking-tight">How it works</h2>
+            <p class="mt-3 text-slate-600">Most people start with a call or the Audit and progress naturally. You can enter at any stage.</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4">
+            <!-- Step 1 -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-semibold text-sm">1</div>
+                    <span class="font-medium">Start Here</span>
+                </div>
+                <h3 class="font-semibold">Strategy Call</h3>
+                <p class="text-sm text-slate-600 mt-2">$195 • 30–60 min</p>
+                <p class="text-sm mt-3 text-slate-600">Quick diagnostic and clear next steps.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-semibold text-sm">2</div>
+                    <span class="font-medium">Get Clarity</span>
+                </div>
+                <h3 class="font-semibold">Full Business Strategy Audit</h3>
+                <p class="text-sm text-slate-600 mt-2">$1,997</p>
+                <p class="text-sm mt-3 text-slate-600">Deep analysis that typically reveals opportunities worth many times the investment.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-semibold text-sm">3</div>
+                    <span class="font-medium">Make It Real</span>
+                </div>
+                <h3 class="font-semibold">Implementation Partnership</h3>
+                <p class="text-sm text-slate-600 mt-2">$7,500 • ~6 weeks</p>
+                <p class="text-sm mt-3 text-slate-600">Staged hands-on execution. Many clients see returns that are multiples of the investment.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-semibold text-sm">4</div>
+                    <span class="font-medium">Stay Supported</span>
+                </div>
+                <h3 class="font-semibold">Ongoing Retainer</h3>
+                <p class="text-sm text-slate-600 mt-2">$4,000/month</p>
+                <p class="text-sm mt-3 text-slate-600">Continued access for iteration and maintenance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers -->
+    <div class="max-w-5xl mx-auto px-6 py-12" id="offers">
+        <div class="max-w-2xl mb-10">
+            <h2 class="text-3xl font-semibold tracking-tight">The Offers</h2>
+        </div>
+
+        <!-- Strategy Call -->
+        <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 mb-6" id="call">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div class="flex-1">
+                    <div class="flex items-center gap-x-3">
+                        <span class="px-3 py-1 text-xs font-medium bg-emerald-100 text-emerald-700 rounded-full">Entry Point</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-3">Strategy Call</h3>
+                    <p class="text-4xl font-semibold tracking-tighter mt-1">$195</p>
+                    <p class="text-slate-600 mt-1">30–60 minutes</p>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium text-sm tracking-wider text-slate-500">WHAT YOU GET</h4>
+                        <ul class="mt-3 space-y-2 text-sm">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Focused diagnostic of your sales, operations, or team challenges</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Prioritized recommendations and clear next steps</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Quick clarity on whether deeper work makes sense</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-80">
+                    <div class="value-pill rounded-2xl p-5 text-sm">
+                        <p class="font-medium">Best for:</p>
+                        <p class="text-slate-600 mt-1">Business owners who want fast clarity and prioritized ideas before committing to deeper work.</p>
+                    </div>
+                    
+                    <a href="#book" 
+                       class="mt-4 w-full inline-flex justify-center items-center gap-x-2 px-6 py-3 bg-white border border-slate-300 hover:bg-slate-50 text-sm font-medium rounded-2xl transition-all">
+                        Book Strategy Call
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Audit -->
+        <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 mb-6" id="audit">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div class="flex-1">
+                    <div class="flex items-center gap-x-3">
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Most Popular</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-3">Full Business Strategy Audit</h3>
+                    <p class="text-4xl font-semibold tracking-tighter mt-1">$1,997</p>
+                    <p class="text-slate-600 mt-1">Delivered in 1–5 business days</p>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium text-sm tracking-wider text-slate-500">DESIGNED TO PAY FOR ITSELF</h4>
+                        <p class="text-sm text-slate-600 mt-2">Most Audits surface clear opportunities in revenue, efficiency, or reduced friction that are worth significantly more than the fee.</p>
+                        
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> In-depth intake questionnaire</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Full analysis across sales, operations, team &amp; customer experience</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Detailed written report + 10–25 min video walkthrough</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Prioritized action plan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-80">
+                    <div class="value-pill rounded-2xl p-5 text-sm">
+                        <p class="font-medium">Best for:</p>
+                        <p class="text-slate-600 mt-1">Business owners who want expert eyes on their full operation and a clear, actionable roadmap.</p>
+                    </div>
+                    
+                    <a href="#audit" 
+                       class="mt-4 w-full inline-flex justify-center items-center gap-x-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-2xl transition-all">
+                        Start the Audit
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation -->
+        <div class="service-card bg-white border border-slate-200 rounded-3xl p-8 mb-6" id="implementation">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div class="flex-1">
+                    <h3 class="text-2xl font-semibold mt-1">Implementation Partnership</h3>
+                    <p class="text-4xl font-semibold tracking-tighter mt-1">$7,500</p>
+                    <p class="text-slate-600 mt-1">~6 weeks (range 4–8 weeks)</p>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium text-sm tracking-wider text-slate-500">HIGH-IMPACT EXECUTION</h4>
+                        <p class="text-sm text-slate-600 mt-2">Hands-on, staged support across 3–4 phases. Many clients see results that are multiples of the investment when changes are implemented.</p>
+                        
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Structured implementation in clear stages</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Weekly check-ins + hands-on guidance</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Focus on sales optimization, systems &amp; team collaboration</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Final review and sustainability plan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-80">
+                    <div class="value-pill rounded-2xl p-5 text-sm">
+                        <p class="font-medium">Best for:</p>
+                        <p class="text-slate-600 mt-1">Business owners who want real execution support rather than just recommendations.</p>
+                    </div>
+                    
+                    <a href="#implementation" 
+                       class="mt-4 w-full inline-flex justify-center items-center gap-x-2 px-6 py-3 bg-white border border-slate-300 hover:bg-slate-50 text-sm font-medium rounded-2xl transition-all">
+                        Start Implementation
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retainer -->
+        <div class="service-card bg-white border border-slate-200 rounded-3xl p-8" id="retainer">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div class="flex-1">
+                    <h3 class="text-2xl font-semibold mt-1">Ongoing Support Retainer</h3>
+                    <p class="text-4xl font-semibold tracking-tighter mt-1">$4,000<span class="text-xl font-normal">/month</span></p>
+                    
+                    <div class="mt-6">
+                        <p class="text-sm text-slate-600">For clients who want continued access after Implementation (or as standalone support).</p>
+                        
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Bi-weekly strategy calls</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Async support via Slack/Loom</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Iteration on previous work</li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Light ongoing implementation help</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-80">
+                    <div class="value-pill rounded-2xl p-5 text-sm">
+                        <p class="font-medium">Best for:</p>
+                        <p class="text-slate-600 mt-1">Ongoing iteration, maintenance, and light support after a main project.</p>
+                    </div>
+                    
+                    <a href="#retainer" 
+                       class="mt-4 w-full inline-flex justify-center items-center gap-x-2 px-6 py-3 bg-white border border-slate-300 hover:bg-slate-50 text-sm font-medium rounded-2xl transition-all">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who This Is For -->
+    <div class="max-w-5xl mx-auto px-6 py-12 border-t border-slate-100">
+        <div class="max-w-2xl">
+            <h2 class="text-2xl font-semibold tracking-tight">Who this is for</h2>
+            <div class="mt-6 grid md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                <div class="flex gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                    <span>Small and medium business owners running real operations and teams</span>
+                </div>
+                <div class="flex gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                    <span>Leaders who want practical systems and processes, not theory</span>
+                </div>
+                <div class="flex gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                    <span>People willing to implement changes to get results</span>
+                </div>
+                <div class="flex gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                    <span>Those who value clear thinking and straightforward execution</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div id="book" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-100">
+        <div class="max-w-2xl">
+            <h2 class="text-3xl font-semibold tracking-tight">Ready to get clarity or start making real progress?</h2>
+            
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#book" 
+                   class="flex-1 inline-flex justify-center items-center gap-x-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-2xl transition-all text-center">
+                    Book a Strategy Call — $195
+                </a>
+                <a href="#audit" 
+                   class="flex-1 inline-flex justify-center items-center gap-x-2 px-8 py-4 border border-slate-300 hover:bg-slate-50 font-medium rounded-2xl transition-all text-center">
+                    Start with the Full Audit
+                </a>
+            </div>
+            
+            <p class="text-xs text-slate-500 mt-4">All services are paid upfront. A simple agreement is provided before we begin.</p>
+        </div>
+    </div>
+
+    <footer class="border-t border-slate-100 py-8">
+        <div class="max-w-5xl mx-auto px-6 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-y-2">
+            <div>© Leon Benjamignan. All rights reserved.</div>
+            <div class="flex gap-x-4">
+                <a href="https://leonbenj.com" class="hover:text-slate-700">leonbenj.com</a>
+                <a href="https://x.com/leonbenj" class="hover:text-slate-700">X / Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        console.log('%c[Services Page] Standalone HTML loaded successfully.', 'color:#64748b');
+    </script>
+</body>
+</html>
