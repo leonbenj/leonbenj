@@ -1,1 +1,443 @@
-$(cat /home/workdir/artifacts/recommendations-final.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations | Leon Benjamignan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header {
+            font-size: 2rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .warm-bg {
+            background-color: #FAF8F5;
+        }
+
+        .quote-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                       box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        }
+
+        .nav-link {
+            transition: color 0.1s ease;
+        }
+        
+        .nav-link:hover {
+            color: #0D9488;
+        }
+    </style>
+</head>
+<body class="warm-bg text-[#1F2937] antialiased">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 rounded-2xl tesla-gradient flex items-center justify-center">
+                        <span class="text-white font-bold text-xl tracking-tighter">LB</span>
+                    </div>
+                    <div class="font-semibold text-xl tracking-tight">Leon Benjamignan</div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="leonbenj-home-redesign-v1.html" class="nav-link text-[#374151] hover:text-[#0D9488]">Home</a>
+                    <a href="https://leonbenj.com/experience" class="nav-link text-[#374151] hover:text-[#0D9488]">Experience</a>
+                    <a href="https://world.hey.com/leon.benjamignan" class="nav-link text-[#374151] hover:text-[#0D9488]">Journal</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <a href="mailto:leon.benjamignan@hey.com" 
+                       class="inline-flex items-center px-6 py-2.5 bg-[#0D9488] hover:bg-[#0F766E] text-white text-sm font-semibold rounded-2xl transition-all active:scale-[0.985]">
+                        Email me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / INTRO -->
+    <div class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center">
+        <h1 class="font-display text-5xl tracking-tighter font-semibold">Recommendations</h1>
+        <p class="mt-4 text-xl text-[#4B5563] max-w-2xl mx-auto">
+            Real feedback from leaders, colleagues, and clients I’ve had the privilege of working with over the years.
+        </p>
+    </div>
+
+    <!-- TESLA SECTION -->
+    <div class="max-w-7xl mx-auto px-6 pb-16">
+        <div class="mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">2021 — 2026</div>
+            <h2 class="section-header tracking-tighter mt-2">Tesla</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Full testimonials -->
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Over the past 4.5 years, Léon has been an exceptional teammate who consistently demonstrated engagement, active listening, constructive feedback, and an unrelenting drive to improve. When he announced his resignation, it was met with both excitement for his future and genuine sadness at losing such a valuable colleague. Léon’s positive attitude and hunger for growth have remained constant. He will undoubtedly achieve great things, and I will be his biggest cheerleader.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Austin Jang</div>
+                    <div class="text-sm text-[#6B7280]">Senior Tesla Advisor • 4+ years</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Léon has been absolutely crushing it helping us get the bot’s knowledge up to speed for Canada. We delayed release partly because of the amount of direct issues he found. The majority of fixes implemented so far are based on his feedback. When I was in Fremont, the AI engineers echoed the same sentiment. Without what he’s been doing, our expected release timeframe would have been at least double. His contributions are nothing short of stellar.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">James Lockman</div>
+                    <div class="text-sm text-[#6B7280]">Staff Project Manager, Tesla Assist</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “You always get information at an insane speed. Special shoutout as always to the king, Léon Benjamignan, who is carrying NAM on his back.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Mahum Zaidi</div>
+                    <div class="text-sm text-[#6B7280]">Content Manager, Tesla Assist</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Léon is integral to our day-to-day operations. He recently developed the “Virkipedia” reference guide for virtual agents — a critical tool now used by both new hires and tenured agents. It serves as a central resource that empowers colleagues with quick answers to difficult questions. Léon is a pillar in our team who continues to push the boundaries of what’s possible.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Alberto Colagrosso</div>
+                    <div class="text-sm text-[#6B7280]">Customer Support Supervisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Congratulations Léon, I am deeply proud of you. You’ve got a drive and determination that is stronger than most people I’ve seen, and it’s going to take you super far at Tesla. You’ve also built a solid team under you. I’m genuinely looking forward to seeing what you accomplish next.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Charles Jones</div>
+                    <div class="text-sm text-[#6B7280]">Store Manager</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Knowing Léon for years, I can confidently say he is one of the most dependable employees at Tesla. He is dedicated to the mission and shows it every day. He has the skills and capabilities to execute complex tasks and projects beyond his current position as a Tesla Advisor. I look forward to hearing more about his successes and growth into project-based roles in the future.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Aaron Ang</div>
+                    <div class="text-sm text-[#6B7280]">Senior Tesla Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “What a week for chat! You are an exceptional peer mentor to the chat team. You consistently provide best practices, proactively flag concerns, and offer valuable reminders that elevate the entire group. Your positive influence is felt not just through the chat team or the SO team, but across the entire virtual organization. Thank you for your outstanding leadership and support.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Kiri O’Connor</div>
+                    <div class="text-sm text-[#6B7280]">Inside Sales Supervisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Shoutout to Léon — wow, he’s doing so well. We synced only a couple of minutes before the meeting to set up his questions, but everything that followed was all him. This is the most refreshing, quick-to-action, and clear meeting I’ve joined in a long time. VERY GOOD JOB!”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Seham Salazar</div>
+                    <div class="text-sm text-[#6B7280]">Delivery Manager</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Léon exemplifies dedication, integrity, and a passion for growth. His mentorship empowered me to unlock potential I did not know I had. He creates an environment that fosters curiosity and innovation, encourages ownership, and ensures everyone feels equipped to succeed. Léon is a beacon of excellence and a reminder of what it means to lead with heart.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Zachary Santos</div>
+                    <div class="text-sm text-[#6B7280]">Tesla Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Huge thanks for joining the SSDD project and immediately taking the lead. Your initiative, dedication, and ability to take on the workload made a massive difference. You caught up so quickly and absolutely crushed it with all the data pulling — seriously impressive. We couldn’t have made it this far without you!”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Lea Gascon</div>
+                    <div class="text-sm text-[#6B7280]">Tesla Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “You’re a rockstar, Léon. You always stay above the noise and focus on delivering excellent work with positivity. We can’t wait to collaborate on great things with you within the next leadership transition. We also need more of Léon’s energy during EOQ — he brings exactly the drive and pace the team needs.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Ismael Zouhair</div>
+                    <div class="text-sm text-[#6B7280]">Territory Operations Leader</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Huge shoutout to Léon Benjamignan from our QC team. Léon supports our IB line and provides exceptional service to our clients through the chat channel. He is highly motivated, consistently delivers strong results, and always brings a positive, solutions-oriented attitude to every situation he is tasked with. We truly appreciate everything he does.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Gurvinder Dhillon (Govi)</div>
+                    <div class="text-sm text-[#6B7280]">Store Manager</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Léon Benjamignan, you are a machine and I truly appreciate you.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Scott Huffman</div>
+                    <div class="text-sm text-[#6B7280]">Program Manager, Tesla Assist</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “We need more of Léon’s energy during EOQ. He brings exactly the pace, focus, and positive drive the team needs at critical moments.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Mathieu Normand-Bergeron</div>
+                    <div class="text-sm text-[#6B7280]">Regional Manager</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “It is not difficult to see that Leon truly embodies Tesla's mission of accelerating the world's transition to sustainable energy. Leon's willingness to help, passion for excellence, and unwavering attention to customer experience have all contributed to the brand's success in Canada. It was an honour to work with Leon and I cannot think of anyone that is more dependable. You are one of, if not the most dedicated person I've met at Tesla.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Leslie Wong</div>
+                    <div class="text-sm text-[#6B7280]">Operations Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Leon took his listening strategies, sales acumen, and genuine concern for client satisfaction to new heights as a coordinator then supervisor. I am confident in his future successes...”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Edward Galvez</div>
+                    <div class="text-sm text-[#6B7280]">Senior Sales and Operations Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “From the moment I joined the sales team in March of 2023 Leon was among the first to welcome me aboard. He has helped me tremendously throughout my time... pushing me to be the most efficient at my work. I cannot thank him enough... I recommend Leon to any company looking for an all star!”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Lenine Guillaume</div>
+                    <div class="text-sm text-[#6B7280]">Virtual Advisor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “I had the privilege to work alongside Leon at Tesla and from the moment I was a newbie in the company Leon was a very welcoming and kind person who is very resourceful and always ready to help. He consistently demonstrated excellence and seeing him graduate ranks over the years was very inspiring. His track record shows an individual that is competent and success driven. I wholeheartedly support his application and would recommend him to any organization willing to add a great asset to their ranks.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">AJ Brutus</div>
+                    <div class="text-sm text-[#6B7280]">Virtual Advisor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENTREPRENEURSHIP SECTION -->
+    <div class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
+        <div class="mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">2015 — 2022</div>
+            <h2 class="section-header tracking-tighter mt-2">Entrepreneurship &amp; Instagram Clients</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “I've made close to £15,000 in sales directly generated from Instagram - organically - since we began working together [within 30 days]. And that's starting from ZERO, no followers, no paid ads.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Justin Devonshire</div>
+                    <div class="text-sm text-[#6B7280]">The Transform Hub UK (now with 21+ locations)</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “I got 4 clients off of Instagram in the first 2 weeks... I have never signed up clients off of IG before.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Jonathan McLernon</div>
+                    <div class="text-sm text-[#6B7280]">Head Coach at Freedom Nutrition Coaching</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Leon is someone who is very giving with his time... He's someone I would invest in. 100%. He's never done me wrong... The only IG peep I recommend hands down.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Dan Meredith</div>
+                    <div class="text-sm text-[#6B7280]">Best-selling author &amp; founder of Coffee With Dan</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Started implementing your local strategy yesterday. Follows are bumping up quick and just got a booking for next weekend!”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Jack Beadle</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “I came to Leon for some very high level pointers... after a few back and forths I put into action his advice and from January to now I've gained 4 thousand followers, gained huge amounts of engagement...”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Ashley Hine</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Been using the hashtag service Leon offered... My posts generally got about 20 likes a photo it's now constantly in the 50s... Defo has been worth the investment.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Aidan Hamilton</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Check out Leon's training for Instagram. The man knows his stuff.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Stuart Mackenzie</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Just had a fantastic chat with Leon about Instagram and have some fantastic ideas now for both promoting my agency business...”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Jason Hulott</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Leon did an audit of my IG account... His recommendations were SO helpful... Leon is an exceptional person! I highly recommend him...”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Delora Guignion</div>
+                    <div class="text-sm text-[#6B7280]">Mindset Mentor</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “I am here to tell you about how great and how greatly improved my Instagram is using Leon Benjamin's hashtag domination service... I finally reached over 10,000 followers...”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Mega Marty Macphee</div>
+                    <div class="text-sm text-[#6B7280]">International Fitness, Nutrition, and contest prep coach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ENGINEERING SECTION -->
+    <div class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
+        <div class="mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Earlier Career</div>
+            <h2 class="section-header tracking-tighter mt-2">Engineering &amp; Technical Roles</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Leon is a highly skilled and dedicated engineer with a strong work ethic and a keen eye for detail. He consistently delivered high-quality work and was always willing to go the extra mile to ensure project success. I would highly recommend Leon to any organization looking for a talented and reliable engineer.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Nafees Ahmed</div>
+                    <div class="text-sm text-[#6B7280]">P. Eng - Senior Mechanical Engineer</div>
+                </div>
+            </div>
+
+            <div class="quote-card bg-white p-8 rounded-3xl border border-[#E5E7EB]">
+                <blockquote class="text-[15px] leading-relaxed">
+                    “Working with Leon was a pleasure. He brought strong technical skills, professionalism, and a collaborative spirit to every project. His attention to detail and ability to solve complex problems made him a valuable team member. I would gladly work with him again.”
+                </blockquote>
+                <div class="mt-6">
+                    <div class="font-semibold">Joshua Sponder</div>
+                    <div class="text-sm text-[#6B7280]">P. Eng - Mechanical Design Engineer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="max-w-3xl mx-auto px-6 py-16 text-center border-t border-[#E5E7EB]">
+        <h2 class="text-3xl font-semibold tracking-tight">Want to work together?</h2>
+        <p class="mt-3 text-lg text-[#4B5563]">If you’re working on something and want a second set of eyes, feel free to reach out.</p>
+        
+        <a href="mailto:leon.benjamignan@hey.com" 
+           class="mt-8 inline-flex items-center px-8 py-4 bg-[#0D9488] hover:bg-[#0F766E] text-white text-lg font-semibold rounded-3xl transition-all active:scale-[0.985]">
+            Email me directly
+        </a>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[#E5E7EB] bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col md:flex-row justify-between items-center gap-y-4 text-[#6B7280]">
+            <div>© 2026 Leon Benjamignan. Built with obsession for clean systems.</div>
+            
+            <div class="flex items-center gap-x-6">
+                <a href="https://world.hey.com/leon.benjamignan" class="hover:text-[#0D9488]">Journal</a>
+                <a href="leonbenj-home-redesign-v1.html" class="hover:text-[#0D9488]">Home</a>
+                <a href="https://leonbenj.com/experience" class="hover:text-[#0D9488]">Experience</a>
+                <span class="hidden md:inline">•</span>
+                <span class="text-xs">Vancouver, BC</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
