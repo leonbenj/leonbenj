@@ -1,1 +1,494 @@
-$(cat /tmp/index-content.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon Benjamignan — Systems Builder &amp; Operator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --warm-bg: #FAF8F5;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --accent: #0D9488;
+            --accent-dark: #0F766E;
+            --warm-accent: #F59E0B;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .warm-bg {
+            background-color: #FAF8F5;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                       box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', system_ui, sans-serif;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .nav-link {
+            transition: color 0.1s ease;
+        }
+        
+        .nav-link:hover {
+            color: #0D9488;
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .quote-card {
+            position: relative;
+        }
+        
+        .quote-card::before {
+            content: '“';
+            position: absolute;
+            top: -8px;
+            left: 24px;
+            font-size: 4rem;
+            color: #E5E7EB;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .tesla-gradient {
+            background: linear-gradient(90deg, #0D9488 0%, #134E4A 100%);
+        }
+
+        .metric {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .subtle-grid {
+            background-image: 
+                linear-gradient(#E5E7EB 1px, transparent 1px),
+                linear-gradient(90deg, #E5E7EB 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="warm-bg text-[#1F2937] antialiased">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 rounded-2xl tesla-gradient flex items-center justify-center">
+                        <span class="text-white font-bold text-xl tracking-tighter">LB</span>
+                    </div>
+                    <div class="font-semibold text-xl tracking-tight">Leon Benjamignan</div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="https://leonbenj.com/experience" class="nav-link text-[#374151] hover:text-[#0D9488]">Experience</a>
+                    <a href="https://leonbenj.com/recommendations.html" class="nav-link text-[#374151] hover:text-[#0D9488]">Recommendations</a>
+                    <a href="https://world.hey.com/leon.benjamignan" class="nav-link text-[#374151] hover:text-[#0D9488]">Journal</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <a href="mailto:leon.benjamignan@hey.com" 
+                       class="inline-flex items-center px-6 py-2.5 bg-[#0D9488] hover:bg-[#0F766E] text-white text-sm font-semibold rounded-2xl transition-all active:scale-[0.985]">
+                        Email me
+                    </a>
+                    
+                    <!-- Mobile menu -->
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-[#6B7280]">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-20">
+        <div class="grid md:grid-cols-12 gap-x-12 items-center">
+            <!-- Text Content -->
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-white border border-[#E5E7EB] text-xs font-medium tracking-[0.5px] mb-6">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-[#374151]">Open to select 2026 consulting projects</span>
+                </div>
+                
+                <h1 class="font-display text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold">
+                    Leon turns chaos<br>into systems that<br>help teams succeed.
+                </h1>
+                
+                <p class="mt-6 max-w-lg text-xl text-[#4B5563]">
+                    From founding my own businesses to leading high-performing teams at Tesla for 4.5 years, 
+                    I bring positive energy, real speed, and the kind of drive that turns good teams into exceptional ones.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="https://leonbenj.com/experience" 
+                       class="group inline-flex items-center justify-center gap-x-3 px-8 py-4 bg-[#1F2937] hover:bg-black text-white font-semibold rounded-3xl text-base transition-all active:scale-[0.985]">
+                        See my full impact
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition"></i>
+                    </a>
+                    
+                    <a href="#how-i-help" 
+                       class="inline-flex items-center justify-center gap-x-3 px-8 py-4 border-2 border-[#1F2937] hover:bg-white font-semibold rounded-3xl text-base transition-all">
+                        How I can help you
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center gap-x-4 text-sm">
+                    <div class="flex -space-x-2">
+                        <div class="w-7 h-7 rounded-full bg-[#0D9488] ring-2 ring-white flex items-center justify-center text-[10px] text-white font-bold">A</div>
+                        <div class="w-7 h-7 rounded-full bg-[#F59E0B] ring-2 ring-white flex items-center justify-center text-[10px] text-white font-bold">J</div>
+                        <div class="w-7 h-7 rounded-full bg-[#8B5CF6] ring-2 ring-white flex items-center justify-center text-[10px] text-white font-bold">S</div>
+                    </div>
+                    <span class="text-[#6B7280] text-sm">Featured in recommendations from Tesla leaders &amp; clients</span>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="md:col-span-5 mt-12 md:mt-0">
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 bg-[#111827]">
+                        <img src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/011919%20-%20Leon-8.jpg" 
+                             alt="Leon Benjamignan professional headshot" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="max-w-7xl mx-auto px-6 pb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="card p-8 text-center">
+                <div class="stat-number text-6xl text-[#0D9488]">4.5</div>
+                <div class="mt-3 font-semibold tracking-tight">Years at Tesla</div>
+                <div class="text-xs text-[#6B7280] mt-1">Promoted 3× • Inside Sales Supervisor</div>
+            </div>
+            <div class="card p-8 text-center">
+                <div class="stat-number text-6xl text-[#0D9488]">24k+</div>
+                <div class="mt-3 font-semibold tracking-tight">Customers helped</div>
+                <div class="text-xs text-[#6B7280] mt-1">Direct inbound interactions across Canada</div>
+            </div>
+            <div class="card p-8 text-center">
+                <div class="stat-number text-6xl text-[#0D9488]">3</div>
+                <div class="mt-3 font-semibold tracking-tight">Businesses built</div>
+                <div class="text-xs text-[#6B7280] mt-1">Dumpling Nation • Triple Your Tribe • Oilmybeard</div>
+            </div>
+            <div class="card p-8 text-center">
+                <div class="stat-number text-6xl text-[#0D9488]">+29%</div>
+                <div class="mt-3 font-semibold tracking-tight">Chat conversion uplift</div>
+                <div class="text-xs text-[#6B7280] mt-1">Pioneered Canada Chat relaunch</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT I BRING -->
+    <div class="max-w-7xl mx-auto px-6 py-16 border-t border-[#E5E7EB]">
+        <div class="max-w-2xl mb-12">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">MY APPROACH</div>
+            <h2 class="section-header tracking-tighter mt-3">What I bring to every project</h2>
+            <p class="mt-4 text-lg text-[#4B5563]">I combine engineering precision with high-energy leadership and a genuine love for building things that actually work.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            <div class="card p-7 group">
+                <div class="skill-icon mb-6"><i class="fa-solid fa-rocket"></i></div>
+                <h3 class="font-semibold text-xl tracking-tight">Pioneer New Initiatives</h3>
+                <p class="mt-3 text-[#4B5563] text-[15px]">I spot gaps quickly, build programs from scratch, and scale them with limited resources.</p>
+            </div>
+            
+            <div class="card p-7 group">
+                <div class="skill-icon mb-6"><i class="fa-solid fa-users"></i></div>
+                <h3 class="font-semibold text-xl tracking-tight">Build Stronger Teams</h3>
+                <p class="mt-3 text-[#4B5563] text-[15px]">I lead through positivity and ownership. I mentor new hires, coach teams of 9+, and bring cross-functional groups together.</p>
+            </div>
+            
+            <div class="card p-7 group">
+                <div class="skill-icon mb-6"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="font-semibold text-xl tracking-tight">Data-Driven Optimization</h3>
+                <p class="mt-3 text-[#4B5563] text-[15px]">I use data and analysis to improve processes, create knowledge bases, build reports, and train AI tools.</p>
+            </div>
+            
+            <div class="card p-7 group">
+                <div class="skill-icon mb-6"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3 class="font-semibold text-xl tracking-tight">Agility &amp; Curiosity</h3>
+                <p class="mt-3 text-[#4B5563] text-[15px]">Engineering background gives me the ability to go deep fast and turn knowledge into simple, usable tools.</p>
+            </div>
+            
+            <div class="card p-7 group">
+                <div class="skill-icon mb-6"><i class="fa-solid fa-bolt"></i></div>
+                <h3 class="font-semibold text-xl tracking-tight">Execution Under Pressure</h3>
+                <p class="mt-3 text-[#4B5563] text-[15px]">I deliver strong results when it matters most — EOQ pushes, high-volume periods, tight deadlines.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESLA HIGHLIGHT -->
+    <div class="max-w-7xl mx-auto px-6 py-16 border-t border-[#E5E7EB]">
+        <div class="flex flex-col lg:flex-row gap-x-16 gap-y-10">
+            <div class="lg:w-5/12">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">2021 — 2026</div>
+                <h2 class="section-header tracking-tighter mt-3">Tesla — Inside Sales &amp; Operations</h2>
+                <p class="mt-5 text-lg text-[#4B5563]">Started as Virtual Advisor. Promoted multiple times through consistent top performance. Built and led high-impact initiatives across Canada.</p>
+                
+                <div class="mt-8 space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-[#0D9488] mt-1"></i>
+                        <span>Pioneered Canada’s first <strong>Self-Serve Demo Drive</strong> site — processes later scaled nationwide</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-[#0D9488] mt-1"></i>
+                        <span>Built &amp; led <strong>Chat systems</strong> as Chat Leader &amp; Trainer — <strong>+29% conversion</strong></span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-[#0D9488] mt-1"></i>
+                        <span>Trained Tesla’s AI (Tesla Assist) on Canada-specific policies</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-check text-[#0D9488] mt-1"></i>
+                        <span>Managed loss prevention + personally assisted <strong>15,000+</strong> customer interactions</span>
+                    </div>
+                </div>
+                
+                <a href="https://leonbenj.com/experience" class="inline-flex items-center gap-x-2 mt-8 text-[#0D9488] font-semibold group">
+                    View full Tesla impact &amp; timeline 
+                    <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <div class="lg:w-7/12">
+                <div class="bg-white rounded-3xl p-8 border border-[#E5E7EB]">
+                    <div class="text-xs uppercase tracking-widest text-[#6B7280] mb-4">KEY RECOGNITIONS</div>
+                    
+                    <div class="mb-8">
+                        <blockquote class="text-lg leading-snug">
+                            “Léon has been absolutely crushing it helping us get the bot’s knowledge up to speed for Canada. We delayed release partly because of the amount of direct issues he found. The majority of fixes implemented so far are based on his feedback. Without what he’s been doing, our expected release timeframe would have been at least double.”
+                        </blockquote>
+                        <div class="mt-4">
+                            <div class="font-semibold">James Lockman</div>
+                            <div class="text-sm text-[#6B7280]">Staff Project Manager, Tesla Assist</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <blockquote class="text-lg leading-snug">
+                            “You always get information at an insane speed. Special shoutout as always to the king, Léon Benjamignan, who is carrying NAM on his back.”
+                        </blockquote>
+                        <div class="mt-4">
+                            <div class="font-semibold">Mahum Zaidi</div>
+                            <div class="text-sm text-[#6B7280]">Content Manager, Tesla Assist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENTREPRENEURSHIP -->
+    <div class="max-w-7xl mx-auto px-6 py-16 border-t border-[#E5E7EB]">
+        <div class="max-w-2xl mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">SIDE QUESTS THAT BUILT ME</div>
+            <h2 class="section-header tracking-tighter mt-3">Entrepreneurship &amp; Consulting</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Dumpling Nation -->
+            <div class="card overflow-hidden">
+                <img src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/docs/assets/dumpling-tray.webp" 
+                     alt="Assorted plant-based dumplings with dipping sauces" 
+                     class="w-full aspect-video object-cover rounded-t-3xl">
+                
+                <div class="p-8">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="font-semibold text-2xl tracking-tight">Dumpling Nation</div>
+                            <div class="text-[#0D9488] text-sm font-medium">Co-Founder • 2020–2021</div>
+                        </div>
+                    </div>
+                    <div class="mt-5 text-[#4B5563]">
+                        Built a premium plant-based dumpling ghost kitchen from scratch with my partner during COVID. 
+                        Hand-rolled <strong>12,100+ dumplings</strong>, grew to <strong>289 customers</strong> (45 repeat), 
+                        1,390 organic Instagram followers in months.
+                    </div>
+                    <div class="mt-5 flex flex-wrap gap-2">
+                        <div class="text-xs px-4 py-1.5 bg-[#F1F5F9] rounded-2xl">Retail partnerships</div>
+                        <div class="text-xs px-4 py-1.5 bg-[#F1F5F9] rounded-2xl">Corporate team-building</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Triple Your Tribe -->
+            <div class="card overflow-hidden">
+                <img src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/docs/assets/leon-cyprus.jpg" 
+                     alt="Leon presenting at a workshop in Cyprus" 
+                     class="w-full aspect-video object-contain object-top rounded-t-3xl shadow-sm bg-white">
+                
+                <div class="p-8">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="font-semibold text-2xl tracking-tight">Triple Your Tribe</div>
+                            <div class="text-[#0D9488] text-sm font-medium">Founder &amp; Consultant • 2015–2022</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5 text-[#4B5563]">
+                        Coached <strong>1,462+ business owners</strong> across live events and communities. 
+                        Helped clients generate real revenue — <strong>£64k from bootcamps</strong> and 
+                        <strong>£15k in 30 days</strong> organic. Audited <strong>700+ accounts</strong>.
+                    </div>
+                    
+                    <div class="mt-5 flex flex-wrap gap-2">
+                        <div class="text-xs px-4 py-1.5 bg-[#F1F5F9] rounded-2xl">Instagram strategy</div>
+                        <div class="text-xs px-4 py-1.5 bg-[#F1F5F9] rounded-2xl">Live workshops &amp; bootcamps</div>
+                        <div class="text-xs px-4 py-1.5 bg-[#F1F5F9] rounded-2xl">Group challenges (600+ members)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED RECOMMENDATIONS -->
+    <div class="max-w-7xl mx-auto px-6 py-16 border-t border-[#E5E7EB]">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">SOCIAL PROOF</div>
+                <h2 class="section-header tracking-tighter">What colleagues &amp; clients say</h2>
+            </div>
+            <a href="https://leonbenj.com/recommendations.html" class="hidden md:flex items-center gap-x-2 text-sm font-semibold text-[#0D9488] hover:underline">
+                Read all 40+ recommendations <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="quote-card card p-8">
+                <div class="text-lg leading-snug">
+                    “When you told me you were resigning it hit me with different types of emotions… I knew you were special. 
+                    You were always engaged, always listened, always provided feedback and you were always hungry to be better.”
+                </div>
+                <div class="mt-8">
+                    <div class="font-semibold">Austin Jang</div>
+                    <div class="text-sm text-[#6B7280]">Senior Tesla Advisor • 4+ years working together</div>
+                </div>
+            </div>
+            
+            <div class="quote-card card p-8">
+                <div class="text-lg leading-snug">
+                    “Leon’s support these past few days have been instrumental to our EOQ success. 
+                    Not only did he clear over 150 communications overnight, he maintained cadence within less than an hour. 
+                    We would not be in a better place without Leon’s help.”
+                </div>
+                <div class="mt-8">
+                    <div class="font-semibold">Seham Salazar</div>
+                    <div class="text-sm text-[#6B7280]">Delivery Manager, Tesla</div>
+                </div>
+            </div>
+            
+            <div class="quote-card card p-8">
+                <div class="text-lg leading-snug">
+                    “Leon exemplifies dedication, integrity, and a passion for growth. 
+                    His mentorship empowered me to unlock potential I did not know I had. 
+                    He creates an environment that fosters curiosity and innovation.”
+                </div>
+                <div class="mt-8">
+                    <div class="font-semibold">Zachary Santos</div>
+                    <div class="text-sm text-[#6B7280]">Tesla Advisor</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 text-center md:hidden">
+            <a href="https://leonbenj.com/recommendations.html" class="text-sm font-semibold text-[#0D9488]">Read all recommendations →</a>
+        </div>
+    </div>
+
+    <!-- HOW I CAN HELP -->
+    <div class="max-w-3xl mx-auto px-6 pt-12 pb-8 text-center">
+        <h2 class="text-2xl font-semibold tracking-tight mb-4">Here’s how I can help</h2>
+        <p class="text-lg text-[#4B5563] max-w-2xl mx-auto">
+            If you’re working on something and want a second set of eyes, or just want to explore whether we’d be a good fit to work together, feel free to send me an email. I’m happy to have a quick chat and see how I can support you.
+        </p>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="max-w-4xl mx-auto px-6 pb-24 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-display text-4xl tracking-tighter">Got a messy system or a team that needs momentum?</h2>
+            <p class="mt-4 text-xl text-[#4B5563]">Tell me about your biggest challenge right now. I’ll reply personally within a day.</p>
+            
+            <div class="mt-8">
+                <a href="mailto:leon.benjamignan@hey.com" 
+                   class="inline-flex items-center gap-x-3 px-10 py-5 bg-[#1F2937] hover:bg-black text-white text-lg font-semibold rounded-3xl transition active:scale-[0.985]">
+                    Email me directly <i class="fa-solid fa-envelope ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="mt-6 text-xs text-[#6B7280]">
+                Or DM me on <a href="https://x.com/leonbenj" class="underline">X</a> • leon.benjamignan@hey.com
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[#E5E7EB] bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col md:flex-row justify-between items-center gap-y-4 text-[#6B7280]">
+            <div>© 2026 Leon Benjamignan. Built with obsession for clean systems.</div>
+            
+            <div class="flex items-center gap-x-6">
+                <a href="https://world.hey.com/leon.benjamignan" class="hover:text-[#0D9488]">Journal</a>
+                <a href="https://leonbenj.com/recommendations.html" class="hover:text-[#0D9488]">Recommendations</a>
+                <a href="https://leonbenj.com/experience" class="hover:text-[#0D9488]">Full Experience</a>
+                <span class="hidden md:inline">•</span>
+                <span class="text-xs">Vancouver, BC</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        console.log('%c[Leon Redesign] Warm, light, high-energy prototype loaded successfully.', 'color:#0D9488');
+    </script>
+</body>
+</html>
