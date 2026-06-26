@@ -64,14 +64,15 @@ class CtaFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <footer class="border-t border-[#E5E7EB] bg-white">
-            <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col md:flex-row justify-between items-center gap-y-6 text-[#6B7280]">
+            <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col items-center md:flex-row justify-between gap-y-6 text-[#6B7280]">
                 <div>© 2026 Leon Benjamignan.</div>
                 
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-center">
                     <a href="/" class="hover:text-[#0D9488]">Home</a>
                     <a href="/recommendations.html" class="hover:text-[#0D9488]">Recommendations</a>
-                    <span class="hidden md:inline">•</span>
-                    <span class="text-xs">Vancouver, BC</span>
+                </div>
+                <div class="text-xs text-[#6B7280]">
+                    Vancouver, BC
                 </div>
             </div>
         </footer>
