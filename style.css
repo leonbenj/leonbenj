@@ -254,3 +254,7 @@ input, textarea {
     font-weight: 700;
     letter-spacing: -0.03em;
 }
+
+.warm-bg {
+    background-color: #FAF8F5;
+}
