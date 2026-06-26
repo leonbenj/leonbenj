@@ -203,3 +203,54 @@ input, textarea {
     display: flex;
   }
 }
+
+/* === NEW REDESIGN STYLES (Warm + Teal Theme) === */
+
+/* Green gradient for the LB logo */
+.tesla-gradient {
+    background: linear-gradient(90deg, #0D9488 0%, #134E4A 100%);
+}
+
+/* Warm background used on new pages */
+.warm-bg {
+    background-color: #FAF8F5;
+}
+
+/* Card hover effects used on new pages */
+.card {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+}
+
+/* Quote card hover effect */
+.quote-card {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.quote-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+}
+
+/* Navigation link hover */
+.nav-link {
+    transition: color 0.1s ease;
+}
+
+.nav-link:hover {
+    color: #0D9488;
+}
+
+/* Section headers */
+.section-header {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
