@@ -22,15 +22,15 @@ class NavHeader extends HTMLElement {
                         <a href="https://world.hey.com/leon.benjamignan" class="nav-link text-[#374151] hover:text-[#0D9488]">Journal</a>
                     </div>
 
-                    <!-- Email Button + Mobile Menu -->
+                    <!-- Email Button + Mobile Hamburger -->
                     <div class="flex items-center gap-x-3">
                         <a href="mailto:leon.benjamignan@hey.com" 
                            class="inline-flex items-center px-6 py-2.5 bg-[#0D9488] hover:bg-[#0F766E] text-white text-sm font-semibold rounded-2xl transition-all active:scale-[0.985]">
                             Email me
                         </a>
-
+                        
                         <!-- Mobile Hamburger -->
-                        <button class="md:hidden w-10 h-10 flex items-center justify-center text-[#6B7280]" aria-label="Toggle menu">
+                        <button class="md:hidden w-10 h-10 flex items-center justify-center text-[#6B7280]" id="hamburger">
                             <i class="fa-solid fa-bars text-xl"></i>
                         </button>
                     </div>
@@ -38,6 +38,13 @@ class NavHeader extends HTMLElement {
             </div>
         </nav>
         `;
+
+        // Mobile Menu Toggle
+        const hamburger = this.querySelector('#hamburger');
+        hamburger.addEventListener('click', () => {
+            alert("Mobile menu clicked! (We'll improve this later)");
+            // You can expand this later with a full mobile menu dropdown
+        });
     }
 }
 
@@ -48,7 +55,6 @@ class CtaFooter extends HTMLElement {
         <footer class="border-t border-[#E5E7EB] bg-white">
             <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col md:flex-row justify-between items-center gap-y-4 text-[#6B7280]">
                 <div>© 2026 Leon Benjamignan. Built with obsession for clean systems.</div>
-                
                 <div class="flex items-center gap-x-6">
                     <a href="https://world.hey.com/leon.benjamignan" class="hover:text-[#0D9488]">Journal</a>
                     <a href="/" class="hover:text-[#0D9488]">Home</a>
@@ -63,6 +69,6 @@ class CtaFooter extends HTMLElement {
     }
 }
 
-// Register the custom elements
+// Register the components
 customElements.define('nav-header', NavHeader);
 customElements.define('cta-footer', CtaFooter);
