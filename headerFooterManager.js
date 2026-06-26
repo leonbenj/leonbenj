@@ -65,12 +65,10 @@ class CtaFooter extends HTMLElement {
         this.innerHTML = `
         <footer class="border-t border-[#E5E7EB] bg-white">
             <div class="max-w-7xl mx-auto px-6 py-12 text-sm flex flex-col md:flex-row justify-between items-center gap-y-6 text-[#6B7280]">
-                <div>© 2026 Leon Benjamignan. Built with obsession for clean systems.</div>
+                <div>© 2026 Leon Benjamignan.</div>
                 
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-center">
-                    <a href="https://world.hey.com/leon.benjamignan" class="hover:text-[#0D9488]">Journal</a>
                     <a href="/" class="hover:text-[#0D9488]">Home</a>
-                    <a href="/experience" class="hover:text-[#0D9488]">Experience</a>
                     <a href="/recommendations.html" class="hover:text-[#0D9488]">Recommendations</a>
                     <span class="hidden md:inline">•</span>
                     <span class="text-xs">Vancouver, BC</span>
