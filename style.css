@@ -258,3 +258,7 @@ input, textarea {
 .warm-bg {
     background-color: #FAF8F5;
 }
+
+.tesla-gradient {
+    background: linear-gradient(90deg, #0D9488 0%, #134E4A 100%);
+}
