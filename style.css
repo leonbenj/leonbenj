@@ -262,3 +262,30 @@ input, textarea {
 .tesla-gradient {
     background: linear-gradient(90deg, #0D9488 0%, #134E4A 100%);
 }
+
+/* Mobile Responsiveness Fixes */
+html, body {
+    overflow-x: hidden;           /* Prevents horizontal scrolling */
+    width: 100%;
+    max-width: 100%;
+}
+
+.max-w-7xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    footer .flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        text-align: center;
+    }
+}
