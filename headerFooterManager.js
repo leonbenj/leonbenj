@@ -35,15 +35,26 @@ class NavHeader extends HTMLElement {
                         </button>
                     </div>
                 </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#E5E7EB] py-4">
+                    <div class="flex flex-col gap-y-4 px-6 text-sm font-medium">
+                        <a href="/" class="nav-link py-2">Home</a>
+                        <a href="/experience" class="nav-link py-2">Experience</a>
+                        <a href="/recommendations.html" class="nav-link py-2">Recommendations</a>
+                        <a href="https://world.hey.com/leon.benjamignan" class="nav-link py-2">Journal</a>
+                    </div>
+                </div>
             </div>
         </nav>
         `;
 
         // Mobile Menu Toggle
         const hamburger = this.querySelector('#hamburger');
+        const mobileMenu = this.querySelector('#mobile-menu');
+
         hamburger.addEventListener('click', () => {
-            alert("Mobile menu clicked! (We'll improve this later)");
-            // You can expand this later with a full mobile menu dropdown
+            mobileMenu.classList.toggle('hidden');
         });
     }
 }
