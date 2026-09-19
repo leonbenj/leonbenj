@@ -289,3 +289,11 @@ html, body {
         text-align: center;
     }
 }
+
+.role-overview {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--li-secondary);
+    font-style: italic;
+}
