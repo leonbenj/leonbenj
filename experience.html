@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work History | Leon Benjamignan</title>
     <meta name="description" content="Leon Benjamignan — Vancouver. Tesla commercial lead and supervisor, founder-operator, mechanical engineer. Work history, results, and recommendations.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -21,6 +22,7 @@
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        .tesla-gradient { background: linear-gradient(135deg, #0D9488 0%, #115E59 100%); }
         body {
             margin: 0;
             background: var(--li-bg);
@@ -28,10 +30,11 @@
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, Cantarell, Arial, sans-serif;
             font-size: 14px;
             line-height: 1.4;
-            antialiased: true;
         }
-        a { color: var(--li-blue); text-decoration: none; }
-        a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+        .page a { color: var(--li-blue); text-decoration: none; }
+        .page a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+        nav-header a, cta-footer a { text-decoration: none; }
+        nav-header a:hover, cta-footer a:hover { text-decoration: none; }
 
         /* LinkedIn-style top bar */
         .li-nav {
@@ -421,20 +424,6 @@
 </head>
 <body class="warm-bg text-[#1F2937] antialiased">
     <nav-header></nav-header>
-
-    <div class="li-nav">
-        <div class="li-nav-inner">
-            <a class="li-nav-brand" href="/">
-                <span class="li-mark">in</span>
-                <span>Leon Benjamignan</span>
-            </a>
-            <div class="li-nav-links">
-                <a class="active" href="#top">Work history</a>
-                <a href="/recommendations.html">Recommendations</a>
-                <a href="mailto:leon.benjamignan@hey.com">Email</a>
-            </div>
-        </div>
-    </div>
 
     <div class="page" id="top">
         <aside class="rail">
