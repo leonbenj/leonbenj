@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work History | Leon Benjamignan</title>
     <meta name="description" content="Leon Benjamignan — Vancouver. Tesla commercial lead and supervisor, founder-operator, mechanical engineer. Work history, results, and recommendations.">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -22,7 +21,6 @@
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        .tesla-gradient { background: linear-gradient(135deg, #0D9488 0%, #115E59 100%); }
         body {
             margin: 0;
             background: var(--li-bg);
@@ -33,8 +31,6 @@
         }
         .page a { color: var(--li-blue); text-decoration: none; }
         .page a:hover { text-decoration: underline; color: var(--li-blue-hover); }
-        nav-header a, cta-footer a { text-decoration: none; }
-        nav-header a:hover, cta-footer a:hover { text-decoration: none; }
 
         /* LinkedIn-style top bar */
         .li-nav {
@@ -43,17 +39,17 @@
             z-index: 40;
             background: #fff;
             border-bottom: 1px solid var(--li-hair);
-            height: 52px;
         }
         .li-nav-inner {
             max-width: 1128px;
             margin: 0 auto;
-            height: 100%;
-            padding: 0 16px;
+            min-height: 52px;
+            padding: 6px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 8px 16px;
         }
         .li-nav-brand {
             display: flex;
@@ -98,6 +94,73 @@
             color: var(--li-text);
             box-shadow: inset 0 -2px 0 var(--li-text);
             border-radius: 0;
+        }
+        .li-nav-cta {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--li-blue);
+            border-radius: 16px;
+            color: var(--li-blue) !important;
+            font-size: 14px;
+            font-weight: 650;
+            text-decoration: none !important;
+        }
+        .li-nav-cta:hover {
+            background: #E8F3FF;
+            color: var(--li-blue-hover) !important;
+            box-shadow: none;
+        }
+
+        .li-footer {
+            background: #fff;
+            border-top: 1px solid var(--li-hair);
+            margin-top: 8px;
+        }
+        .li-footer-inner {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 20px 16px 28px;
+        }
+        .li-footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            color: var(--li-text);
+            font-weight: 650;
+            text-decoration: none;
+        }
+        .li-footer-brand:hover { text-decoration: none; color: var(--li-text); }
+        .li-footer-brand .li-mark {
+            width: 24px;
+            height: 24px;
+            font-size: 13px;
+            border-radius: 3px;
+        }
+        .li-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            font-size: 12px;
+        }
+        .li-footer-links a {
+            color: var(--li-secondary);
+            text-decoration: none;
+        }
+        .li-footer-links a:hover {
+            color: var(--li-blue);
+            text-decoration: underline;
+        }
+        .li-footer-meta {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px;
+            color: var(--li-muted);
+            font-size: 12px;
         }
 
         .page {
@@ -422,8 +485,22 @@
         }
     </style>
 </head>
-<body class="warm-bg text-[#1F2937] antialiased">
-    <nav-header></nav-header>
+<body>
+    <header class="li-nav">
+        <div class="li-nav-inner">
+            <a class="li-nav-brand" href="/">
+                <span class="li-mark">in</span>
+                <span>Leon Benjamignan</span>
+            </a>
+            <nav class="li-nav-links" aria-label="Page">
+                <a href="/">Home</a>
+                <a class="active" href="#top">Work history</a>
+                <a href="/recommendations.html">Recommendations</a>
+                <a href="https://world.hey.com/leon.benjamignan">Journal</a>
+                <a class="li-nav-cta" href="mailto:leon.benjamignan@hey.com">Email</a>
+            </nav>
+        </div>
+    </header>
 
     <div class="page" id="top">
         <aside class="rail">
@@ -757,7 +834,24 @@
         </div>
     </div>
 
-    <cta-footer></cta-footer>
-    <script src="headerFooterManager.js"></script>
+    <footer class="li-footer">
+        <div class="li-footer-inner">
+            <a class="li-footer-brand" href="/">
+                <span class="li-mark">in</span>
+                <span>Leon Benjamignan</span>
+            </a>
+            <nav class="li-footer-links" aria-label="Footer">
+                <a href="/">Home</a>
+                <a href="#top">Work history</a>
+                <a href="/recommendations.html">Recommendations</a>
+                <a href="https://world.hey.com/leon.benjamignan">Journal</a>
+                <a href="mailto:leon.benjamignan@hey.com">Email</a>
+            </nav>
+            <div class="li-footer-meta">
+                <div>© 2026 Leon Benjamignan.</div>
+                <div>Vancouver, BC</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
