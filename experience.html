@@ -492,6 +492,45 @@
             margin-top: 16px;
             padding-top: 16px;
         }
+
+        html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.page,
+.card,
+.li-nav-inner,
+.li-footer-inner,
+.identity,
+.exp {
+    max-width: 100%;
+}
+
+/* grid/flex children must be allowed to shrink */
+.exp > div,
+.section-head,
+.stat-row .l {
+    min-width: 0;
+}
+
+.section-head {
+    flex-wrap: wrap;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* long strings ($100k+, talking-points, URLs) */
+.exp li,
+.role-overview,
+.headline,
+.mini p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
     </style>
 </head>
 <body>
