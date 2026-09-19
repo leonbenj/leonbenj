@@ -5,375 +5,767 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work History | Leon Benjamignan</title>
     <meta name="description" content="Leon Benjamignan — Vancouver. Tesla commercial lead and supervisor, founder-operator, mechanical engineer. Work history, results, and recommendations.">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .font-display {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.025em;
+        :root {
+            --li-blue: #0A66C2;
+            --li-blue-hover: #004182;
+            --li-bg: #F3F2EF;
+            --li-card: #FFFFFF;
+            --li-border: #E8E8E8;
+            --li-hair: #D0CECB;
+            --li-text: #191919;
+            --li-secondary: #666666;
+            --li-muted: #9B9B9B;
+            --li-radius: 8px;
         }
-        .section-header {
-            font-size: 2rem;
-            line-height: 2.25rem;
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--li-bg);
+            color: var(--li-text);
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, Cantarell, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            antialiased: true;
+        }
+        a { color: var(--li-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+
+        /* LinkedIn-style top bar */
+        .li-nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: #fff;
+            border-bottom: 1px solid var(--li-hair);
+            height: 52px;
+        }
+        .li-nav-inner {
+            max-width: 1128px;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .li-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--li-text);
+            font-weight: 650;
+            text-decoration: none;
+        }
+        .li-nav-brand:hover { text-decoration: none; color: var(--li-text); }
+        .li-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 4px;
+            background: var(--li-blue);
+            color: #fff;
+            display: grid;
+            place-items: center;
             font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.04em;
+        }
+        .li-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .li-nav-links a {
+            color: var(--li-secondary);
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        .li-nav-links a:hover {
+            background: #F3F2EF;
+            color: var(--li-text);
+            text-decoration: none;
+        }
+        .li-nav-links a.active {
+            color: var(--li-text);
+            box-shadow: inset 0 -2px 0 var(--li-text);
+            border-radius: 0;
+        }
+
+        .page {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 24px 16px 64px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        @media (min-width: 960px) {
+            .page {
+                grid-template-columns: 300px minmax(0, 1fr);
+                align-items: start;
+            }
+        }
+
+        .card {
+            background: var(--li-card);
+            border: 1px solid var(--li-border);
+            border-radius: var(--li-radius);
+            overflow: hidden;
+        }
+        .card-pad { padding: 16px 20px 20px; }
+        .card + .card { margin-top: 0; }
+        .stack { display: flex; flex-direction: column; gap: 12px; }
+
+        /* Cover + identity */
+        .cover {
+            height: 132px;
+            background:
+                radial-gradient(800px 180px at 10% 0%, rgba(255,255,255,0.18), transparent 50%),
+                linear-gradient(90deg, #38434F 0%, #56687A 50%, #2F3A45 100%);
+        }
+        @media (min-width: 720px) { .cover { height: 168px; } }
+        .identity { padding: 0 20px 18px; position: relative; }
+        .avatar-wrap {
+            width: 128px;
+            height: 128px;
+            margin-top: -72px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background: #E8E8E8;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+        }
+        @media (min-width: 720px) {
+            .avatar-wrap { width: 152px; height: 152px; margin-top: -88px; }
+        }
+        .identity h1 {
+            margin: 12px 0 2px;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 650;
+        }
+        .kicker {
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--li-secondary);
+            margin: 0 0 2px;
+        }
+        .headline {
+            margin: 0;
+            font-size: 16px;
+            color: var(--li-text);
+        }
+        .meta {
+            margin: 6px 0 0;
+            color: var(--li-secondary);
+            font-size: 14px;
+        }
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 16px;
+            border: 1px solid var(--li-blue);
+            color: var(--li-blue);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .chip:hover {
+            background: #E8F3FF;
+            text-decoration: none;
+            color: var(--li-blue-hover);
+            border-color: var(--li-blue-hover);
+        }
+
+        /* Left rail */
+        .rail { display: flex; flex-direction: column; gap: 8px; }
+        @media (min-width: 960px) {
+            .rail { position: sticky; top: 64px; }
+        }
+        .rail h2, .section-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+        }
+        .rail p { margin: 8px 0 0; color: var(--li-secondary); font-size: 14px; }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--li-border);
+        }
+        .stat-row:last-child { border-bottom: 0; padding-bottom: 0; }
+        .stat-row .n {
+            font-size: 20px;
+            font-weight: 650;
+            color: var(--li-blue);
             letter-spacing: -0.03em;
         }
-        .warm-bg { background-color: #FAF8F5; }
-        .tesla-gradient { background: linear-gradient(135deg, #0D9488 0%, #115E59 100%); }
-        html { scroll-behavior: smooth; }
+        .stat-row .l {
+            color: var(--li-secondary);
+            font-size: 12px;
+            line-height: 1.35;
+            text-align: right;
+            max-width: 190px;
+        }
+
+        /* Main sections */
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+        .section-sub {
+            color: var(--li-secondary);
+            font-size: 13px;
+        }
+        .about p {
+            margin: 0 0 12px;
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--li-text);
+        }
+        .about p:last-child { margin-bottom: 0; }
+        .label {
+            font-weight: 600;
+            color: var(--li-text);
+        }
+
+        /* Experience entries */
+        .exp {
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
+            gap: 12px;
+            padding: 16px 0;
+            border-top: 1px solid var(--li-border);
+        }
+        .exp:first-of-type { border-top: 0; padding-top: 8px; }
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: -0.03em;
+            flex-shrink: 0;
+        }
+        .logo.tesla { background: #111; color: #E31937; }
+        .logo.motivator { background: #1D4ED8; }
+        .logo.tyt { background: #0F766E; }
+        .logo.dn { background: #B45309; }
+        .logo.omb { background: #374151; }
+        .logo.trux { background: #1F2937; }
+        .logo.cds { background: #0E7490; }
+        .logo.seed { background: #3F6212; }
+        .logo.mcgill { background: #ED1B2F; }
+        .logo.apple { background: #111; }
+        .role-title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 650;
+        }
+        .role-org {
+            margin: 2px 0 0;
+            font-size: 14px;
+            color: var(--li-text);
+        }
+        .role-meta {
+            margin: 2px 0 0;
+            font-size: 13px;
+            color: var(--li-secondary);
+        }
+        .role-tag {
+            margin: 6px 0 0;
+            font-size: 13px;
+            color: var(--li-blue);
+            font-weight: 600;
+        }
+        .exp p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--li-text);
+        }
+        .exp ul {
+            margin: 8px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .exp li {
+            position: relative;
+            padding-left: 14px;
+            margin: 6px 0 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--li-text);
+        }
+        .exp li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--li-secondary);
+        }
+        .subgrid {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        @media (min-width: 720px) {
+            .subgrid.three { grid-template-columns: repeat(3, 1fr); }
+        }
+        .mini {
+            border: 1px solid var(--li-border);
+            border-radius: 8px;
+            padding: 12px;
+            background: #FAFAF9;
+        }
+        .mini .eyebrow {
+            font-size: 12px;
+            font-weight: 650;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--li-secondary);
+            margin-bottom: 4px;
+        }
+        .mini h4 {
+            margin: 0 0 6px;
+            font-size: 15px;
+            font-weight: 650;
+        }
+        .mini p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--li-secondary); }
+
+        .quote {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--li-text);
+        }
+        .quote-card + .quote-card {
+            border-top: 1px solid var(--li-border);
+            margin-top: 16px;
+            padding-top: 16px;
+        }
+        figcaption {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--li-secondary);
+        }
+        figcaption strong { color: var(--li-text); font-weight: 600; }
+
+        .cta {
+            text-align: center;
+            padding: 28px 20px;
+        }
+        .cta h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 650;
+        }
+        .cta p {
+            margin: 10px auto 0;
+            max-width: 36rem;
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--li-secondary);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 18px;
+            padding: 10px 20px;
+            background: var(--li-blue);
+            color: #fff !important;
+            font-size: 16px;
+            font-weight: 650;
+            border-radius: 24px;
+            text-decoration: none !important;
+        }
+        .btn:hover { background: var(--li-blue-hover); }
+        .fine {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--li-muted);
+        }
+
+        .company-block { margin-top: 8px; }
+        .company-block + .company-block {
+            border-top: 1px solid var(--li-border);
+            margin-top: 16px;
+            padding-top: 16px;
+        }
     </style>
 </head>
 <body class="warm-bg text-[#1F2937] antialiased">
     <nav-header></nav-header>
 
-    <!-- HERO -->
-    <div class="max-w-7xl mx-auto px-6 pt-14 pb-10">
-        <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Work history</div>
-        <h1 class="section-header tracking-tighter mt-1 md:text-[2.5rem] md:leading-tight">Leon Benjamignan</h1>
-        <p class="text-[#6B7280] mt-1">Vancouver, BC - Bilingual EN/FR Professional</p>
-
-        <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB] mt-8 max-w-3xl mx-auto">
-            <p class="text-[15px] leading-relaxed text-[#374151]">
-                I love turning messy systems into measurable and repeatable outcomes.
-            </p>
-            <p class="mt-4 text-[15px] leading-relaxed text-[#4B5563]">
-                <span class="font-semibold text-[#0D9488]">Quick Overview:</span>
-                consistent top performer at Tesla from inbound, sales, operations, promoted 3 times, lead 2 nationwide projects. Three-time founder who solved business and marketing problems (ex: 15k within 30 days). Engineering mindset and self-starter. 
-            </p>
-            <p class="mt-4 text-[15px] leading-relaxed text-[#374151]">
-                <span class="font-semibold text-[#0D9488]">What Im looking for:</span>
-                roles that own customers, a team, or operations to improve sales, collaboration and customer satisfaction.  
-            </p>
-        </div>
-
-        <div class="mt-6 flex flex-wrap justify-center gap-2 text-sm">
-            <a href="#tesla" class="px-4 py-2 rounded-full bg-white border border-[#E5E7EB] hover:border-[#0D9488]">Tesla</a>
-            <a href="#companies" class="px-4 py-2 rounded-full bg-white border border-[#E5E7EB] hover:border-[#0D9488]">Companies I built</a>
-            <a href="#engineering" class="px-4 py-2 rounded-full bg-white border border-[#E5E7EB] hover:border-[#0D9488]">Engineering</a>
-            <a href="#education" class="px-4 py-2 rounded-full bg-white border border-[#E5E7EB] hover:border-[#0D9488]">Education</a>
-            <a href="#said" class="px-4 py-2 rounded-full bg-white border border-[#E5E7EB] hover:border-[#0D9488]">What people said</a>
-        </div>
-    </div>
-
-    <!-- PROOF STRIP -->
-    <div class="max-w-5xl mx-auto px-6 pb-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div class="bg-white rounded-3xl border border-[#E5E7EB] p-5 text-center">
-                <div class="text-3xl font-semibold tabular-nums text-[#0D9488]">+29%</div>
-                <div class="text-xs text-[#6B7280] mt-1">conversion lift on Tesla Chat after I rebuilt how the team sold</div>
-            </div>
-            <div class="bg-white rounded-3xl border border-[#E5E7EB] p-5 text-center">
-                <div class="text-3xl font-semibold tabular-nums text-[#0D9488]">15,000+</div>
-                <div class="text-xs text-[#6B7280] mt-1">customer interactions I personally handled</div>
-            </div>
-            <div class="bg-white rounded-3xl border border-[#E5E7EB] p-5 text-center">
-                <div class="text-3xl font-semibold tabular-nums text-[#0D9488]">3X</div>
-                <div class="text-xs text-[#6B7280] mt-1">promotions in 4.5 years · Advisor → QA → Supervisor</div>
-            </div>
-            <div class="bg-white rounded-3xl border border-[#E5E7EB] p-5 text-center">
-                <div class="text-3xl font-semibold tabular-nums text-[#0D9488]">3</div>
-                <div class="text-xs text-[#6B7280] mt-1">companies founded · product brand, business marketing, local food brand</div>
+    <div class="li-nav">
+        <div class="li-nav-inner">
+            <a class="li-nav-brand" href="/">
+                <span class="li-mark">in</span>
+                <span>Leon Benjamignan</span>
+            </a>
+            <div class="li-nav-links">
+                <a class="active" href="#top">Work history</a>
+                <a href="/recommendations.html">Recommendations</a>
+                <a href="mailto:leon.benjamignan@hey.com">Email</a>
             </div>
         </div>
     </div>
 
-    <!-- TESLA -->
-    <div id="tesla" class="max-w-7xl mx-auto px-6 pb-16">
-        <div class="mb-8 flex items-end justify-between gap-4">
-            <div>
-                <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Oct 2021 — Mar 2026</div>
-                <h2 class="section-header tracking-tighter mt-1">Tesla</h2>
-                <p class="text-[#6B7280] mt-1">Inside Sales Supervisor · Quality Assurance Coordinator · Virtual Advisor · Vancouver &amp; Montreal</p>
-            </div>
-            <div class="hidden md:block text-right">
-                <div class="text-4xl font-semibold tabular-nums text-[#0D9488]">4.5</div>
-                <div class="text-sm text-[#6B7280] -mt-1">years · 3 promotions</div>
-            </div>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB] mb-6">
-            <h3 class="font-semibold text-xl tracking-tight mb-3">Overview of my tenure</h3>
-            <p class="text-[15px] leading-relaxed text-[#374151]">
-                I started on inbound as a Virtual Advisor. Promoted on performance into chat leadership, Quality Assurance, then Inside Sales Supervisor. I owned a live commercial book, coached 9 advisors, built the playbooks the team actually used to speed up first-touch resolutions and sales objections, and sat in the middle between customers, Delivery, Finance and Territory Ops.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-5 mb-6">
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="uppercase text-xs tracking-widest font-semibold text-[#0D9488] mb-2">Sales system</div>
-                <h4 class="font-semibold text-lg tracking-tight mb-2">Chat rebuild</h4>
-                <p class="text-[15px] text-[#4B5563] leading-relaxed">Built and led Chat for Canada as leader and trainer. +29% conversion. Coached a team of 9. Mentored, trained and coached team on a weekly basis.</p>
-            </div>
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="uppercase text-xs tracking-widest font-semibold text-[#0D9488] mb-2">Operations</div>
-                <h4 class="font-semibold text-lg tracking-tight mb-2">Self-Serve Demo Drive</h4>
-                <p class="text-[15px] text-[#4B5563] leading-relaxed">Launched Canada's first self-serve demo-drive site: created the process, training, fleet operations across all regions and teams for alignment.</p>
-            </div>
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="uppercase text-xs tracking-widest font-semibold text-[#0D9488] mb-2">Product &amp; knowledge</div>
-                <h4 class="font-semibold text-lg tracking-tight mb-2">Tesla Assist</h4>
-                <p class="text-[15px] text-[#4B5563] leading-relaxed">Trained Tesla Assist on Canada policy singlehandedly. Found issues that delayed a bad release on purpose. Built knowledge base and talking points used across Canada and the NW US.</p>
-            </div>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB]">
-            <h3 class="font-semibold text-xl tracking-tight mb-4">Other Accomplishments and Contributions</h3>
-            <ul class="space-y-3 text-[15px] text-[#374151]">
-                <li class="flex gap-3"><span class="text-[#0D9488] mt-1">•</span> <span>15,000+ inbound conversations I ran myself - on top of supervising the team.</span></li>
-                <li class="flex gap-3"><span class="text-[#0D9488] mt-1">•</span> <span>Loss-prevention screening on third-party lease activations.</span></li>
-                <li class="flex gap-3"><span class="text-[#0D9488] mt-1">•</span> <span>Running end-of-quarter campaigns: daily reporting to leadership, completing targeted campaign lists and rescuing high-risk deals.</span></li>
-                <li class="flex gap-3"><span class="text-[#0D9488] mt-1">•</span> <span>Escalations across Sales, Inbound, Delivery, and Territory Ops to ensure high customer satisfaction while doing what's right alongside company policy.</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- MOTIVATOR -->
-    <div id="motivator" class="max-w-7xl mx-auto px-6 pb-16">
-        <div class="mb-6">
-            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Aug — Oct 2024</div>
-            <h2 class="section-header tracking-tighter mt-1">Motivator</h2>
-            <p class="text-[#6B7280] mt-1">Director of Business Development · Contract, part-time · ~3 months</p>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB]">
-            <p class="text-[15px] leading-relaxed text-[#374151] mb-4">
-                Short commercial contract: sponsorship packaging and sales prospecting for the Forward Focus Summit. 
-            </p>
-            <ul class="space-y-2 text-[15px] text-[#4B5563]">
-                <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Built the sponsor list, packaged the offers in tiers, and ran outbound prospecting to close mutually useful summit sponsorships via LinkedIn.</span></li>
-                <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Finalized sponsorship packages and promo materials. (Landing pages, media packages, profile positioning, outreach emails)</span></li>
-                <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Built trackers, analysis tables, and wrote processes to speed up qualifying companies and identifying opportunities quickly.</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- COMPANIES -->
-    <div id="companies" class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
-        <div class="mb-3">
-            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">2014 — 2022</div>
-            <h2 class="section-header tracking-tighter mt-1">Companies I built</h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6 mt-8">
-            <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB] md:col-span-2">
-                <div class="flex items-start gap-x-3 mb-4">
-                    <i class="fa-solid fa-comments text-2xl text-[#0D9488] mt-1"></i>
-                    <div>
-                        <div class="font-semibold text-xl tracking-tight">Triple Your Tribe</div>
-                        <div class="text-sm text-[#6B7280]">Founder &amp; business marketing coach · 2015-2022 · Montreal, QC</div>
+    <div class="page" id="top">
+        <aside class="rail">
+            <div class="card">
+                <div class="cover"></div>
+                <div class="identity">
+                    <img class="avatar-wrap"
+                         src="https://raw.githubusercontent.com/leonbenj/leonbenj/main/docs/assets/leon.jpg"
+                         alt="Leon Benjamignan">
+                    <p class="kicker">Work history</p>
+                    <h1>Leon Benjamignan</h1>
+                    <p class="headline">Vancouver, BC - Bilingual EN/FR Professional</p>
+                    <p class="meta">Vancouver, British Columbia, Canada</p>
+                    <div class="chip-row">
+                        <a href="#tesla" class="chip">Tesla</a>
+                        <a href="#companies" class="chip">Companies I built</a>
+                        <a href="#engineering" class="chip">Engineering</a>
+                        <a href="#education" class="chip">Education</a>
+                        <a href="#said" class="chip">What people said</a>
                     </div>
                 </div>
-                <p class="text-[15px] text-[#374151] leading-relaxed mb-4">
-                    A coaching practice for SMB owners to grow a loyal fanbase, increase sales and foot traffic through Instagram marketing and positioning. 
+            </div>
+
+            <div class="card card-pad">
+                <h2>Highlights</h2>
+                <div class="stat-row">
+                    <div class="n">+29%</div>
+                    <div class="l">conversion lift on Tesla Chat after I rebuilt how the team sold</div>
+                </div>
+                <div class="stat-row">
+                    <div class="n">15,000+</div>
+                    <div class="l">customer interactions I personally handled</div>
+                </div>
+                <div class="stat-row">
+                    <div class="n">3X</div>
+                    <div class="l">promotions in 4.5 years · Advisor → QA → Supervisor</div>
+                </div>
+                <div class="stat-row">
+                    <div class="n">3</div>
+                    <div class="l">companies founded · product brand, business marketing, local food brand</div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="stack">
+            <section class="card card-pad about">
+                <div class="section-head">
+                    <h2 class="section-title">About</h2>
+                </div>
+                <p>
+                    I love turning messy systems into measurable and repeatable outcomes.
                 </p>
-                <ul class="space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Hosted marketing workshops to 8 paid entrepreneurial groups and 5 international events (NYC, Montreal, UK, Cyprus twice). Guest expert on 9 podcasts. Hosted 600-person group challenges. Wrote a 100-page book on Instagram marketing and positioning for business owners.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Audited 700+ accounts across various industries for unique positioning and messaging to their respective audiences. </span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Organized my clients on a CRM (HubSpot) - for health checks, follow-ups, and next actions visible.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Offered 1:1 consulting, turbo and full account audits, hashtag research for hyper-focused reach, a paid mastermind, and a free Facebook group.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Client result examples: £15k organic in 30 days from zero; £64k from a bootcamp event launch; another client closed their first clients off Instagram within 2 weeks of starting with me.</span></li>
-                </ul>
-            </div>
+                <p>
+                    <span class="label">Quick Overview:</span>
+                    consistent top performer at Tesla from inbound, sales, operations, promoted 3 times, lead 2 nationwide projects. Three-time founder who solved business and marketing problems (ex: 15k within 30 days). Engineering mindset and self-starter.
+                </p>
+                <p>
+                    <span class="label">What Im looking for:</span>
+                    roles that own customers, a team, or operations to improve sales, collaboration and customer satisfaction.
+                </p>
+            </section>
 
-            <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex items-center gap-x-3 mb-4">
-                    <i class="fa-solid fa-utensils text-2xl text-[#0D9488]"></i>
-                    <div>
-                        <div class="font-semibold text-xl tracking-tight">Dumpling Nation</div>
-                        <div class="text-sm text-[#6B7280]">Co-Founder · 2020-2021 · Montreal, QC</div>
-                    </div>
-                </div>
-                <ul class="space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Created plant-based dumplings inspired by flavours from around the world as a premium offering in the vegan space.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>12,100+ dumplings and sauces made from scratch, 289 customers, 45 repeat (2-5 orders). 1,390 organic loyal Instagram followers. Partnered with 2 retail distributors for bulk orders. One pop-up event in person.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>We sold out orders for the week ahead to measure demand ahead of time and consistently improved on our processes to allow for increased production in a small kitchen space.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>I set up the website, catalog, email newsletter campaigns, payments, Instagram marketing, corporate team-build classes during lockdowns.</span></li>
-                </ul>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex items-center gap-x-3 mb-4">
-                    <i class="fa-solid fa-store text-2xl text-[#0D9488]"></i>
-                    <div>
-                        <div class="font-semibold text-xl tracking-tight">Oil My Beard</div>
-                        <div class="text-sm text-[#6B7280]">Founder · 2014-2015 · Montreal, QC</div>
-                    </div>
-                </div>
-                <ul class="space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Designed and launched an innovative male grooming product. Sold DTC and partnered with 2 Montreal barbershops for builk orders.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Grew ~20,000 Instagram followers in months on organic outreach and community - then fulfillment, content, copywritingand retail placement myself.</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- ENGINEERING -->
-    <div id="engineering" class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
-        <div class="mb-8">
-            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">2008 — 2017</div>
-            <h2 class="section-header tracking-tighter mt-1">Engineering &amp; earlier ops</h2>
-            <p class="text-[#6B7280] mt-2 max-w-2xl text-[15px] leading-relaxed">
-                I explored various R&D roles building my cross-functional skills while honing in on design, debugging and efficiency in a fast-paced highly collaborative environment.
-            </p>
-        </div>
-
-        <div class="space-y-5">
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                    <div>
-                        <div class="font-semibold text-lg tracking-tight">Trux Accessories</div>
-                        <div class="text-sm text-[#6B7280]">Special Projects Manager · Lead Mechanical Drafter · Marketing Assistant · 2016-2017</div>
-                    </div>
-                    <div class="text-sm text-[#0D9488] font-medium">R&amp;D · $100k+ contracts</div>
-                </div>
-                <ul class="mt-3 space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Product R&D for truck lighting: New accessory designs from concept through CAD, 3D models, and 3D-scan capture to send to manufacturing.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>VP Sales support helping to close $100k+ contracts: Liaison between Sales and Marketing - creating custom product displays, proposal packs, and follow-through so heavy-duty accessory deals progressed.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Brand and channel management: Social media content, contests and brochures for their North American market.</span></li>
-                </ul>
-            </div>
-
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                    <div>
-                        <div class="font-semibold text-lg tracking-tight">CDS Machines</div>
-                        <div class="text-sm text-[#6B7280]">Lead Mechanical Engineer, R&amp;D · 2013-2014</div>
-                    </div>
-                    <div class="text-sm text-[#0D9488] font-medium">Medical devices · SR&amp;ED</div>
-                </div>
-                <ul class="mt-3 space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Designing & modifying machines for leading medical manufacturer of downstream plastic extrusion systems.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Lead a research & development project for a new medical product line - SRED program
-                    </span></li>
-                </ul>
-            </div>
-
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                    <div>
-                        <div class="font-semibold text-lg tracking-tight">Seed Hawk Inc. (Väderstad)</div>
-                        <div class="text-sm text-[#6B7280]">Design Engineer-in-Training · 2012-2013</div>
-                    </div>
-                    <div class="text-sm text-[#0D9488] font-medium">Ag machinery</div>
-                </div>
-                <ul class="mt-3 space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>
-                        Updated and adapted designs for large, multi-million-dollar farming equipment and future product lines - CAD modelling and drawings, coordinated with the team through every process, outsourcing and in-house.
-                    </span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Designed and developed prototypes for world-leading zero-tillage seeding systems.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Rapid prototyping in 3D CAD: machined, laser-cut, welded, and sheet-metal parts, outsourcing and in-house, to company and industry standards.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Ran structural analysis in Finite Element Analysis (FEA) software to evaluate modelled designs for reliability.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Improved cost efficiency by iterating designs against manufacturing constraints before parts hit the shop.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Kept the research department moving: constant communication with team members, management, and manufacturing staff.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Documentation: summarized and dated assigned tasks so drawings and follow-ups stayed organized.</span></li>
-                </ul>
-            </div>
-
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                    <div>
-                        <div class="font-semibold text-lg tracking-tight">McGill University</div>
-                        <div class="text-sm text-[#6B7280]">Lead Design &amp; Systems Engineer Intern · 2011-2012</div>
-                    </div>
-                    <div class="text-sm text-[#0D9488] font-medium">$3k cost · ~$170k saved</div>
-                </div>
-                <ul class="mt-3 space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Designed and built a 3D metal printer prototype for a client on a $3,000 budget, saving them $170,000. Printed a 3D slanted metallic pipe at a fraction of market cost.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Built it with a team of 4 undergraduate engineers in a single year - a 3D laser printing table at approximately 2% of the cost of a commercial Selective Laser Sintering table.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Main design challenges: 50-micron metallic powder layers and a smooth, automated powder distribution system. Cost-effective printer capable of fusing metallic powder for composite-nanostructure work.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Moving components: gears, stepper motors, and linear actuators. Evaluated and improved initial concepts and solved issues during the build.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Communication: weekly meetings with the client, advisors, and team. Hit every requirement and exceeded expectations.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Exhibition: design posters and video montages.</span></li>
-
-
-                </ul>
-            </div>
-
-            <div class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                    <div>
-                        <div class="font-semibold text-lg tracking-tight">Apple</div>
-                        <div class="text-sm text-[#6B7280]">Inventory Control Specialist · 2008–2009 · first Montreal store</div>
-                    </div>
-                    <div class="text-sm text-[#0D9488] font-medium">Retail ops</div>
+            <!-- TESLA -->
+            <section class="card card-pad" id="tesla">
+                <div class="section-head">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="section-sub">Oct 2021 — Mar 2026</div>
                 </div>
 
-                <ul class="mt-3 space-y-2 text-[15px] text-[#4B5563]">
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Helped open Apple's first Montreal store and supported big product launches from the back office.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Kept incredibly accurate inventory records during very high movement of goods and organized a small stockroom so retail could run smoothly.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Coordinated the back-of-house team and mentored newcomers under launch pressure.</span></li>
-                    <li class="flex gap-2"><span class="text-[#0D9488] mt-1">•</span> <span>Completed Core Retail Training: worked the floor when needed - advised customers and recommended complete solutions to support frontend operations.</span></li>
+                <article class="exp">
+                    <div class="logo tesla" aria-hidden="true">T</div>
+                    <div>
+                        <h3 class="role-title">Tesla</h3>
+                        <p class="role-org">Inside Sales Supervisor · Quality Assurance Coordinator · Virtual Advisor · Vancouver &amp; Montreal</p>
+                        <p class="role-meta">Oct 2021 — Mar 2026 · 4.5 years · 3 promotions</p>
 
+                        <h4 class="role-title" style="font-size:15px;margin-top:14px;">Overview of my tenure</h4>
+                        <p>
+                            I started on inbound as a Virtual Advisor. Promoted on performance into chat leadership, Quality Assurance, then Inside Sales Supervisor. I owned a live commercial book, coached 9 advisors, built the playbooks the team actually used to speed up first-touch resolutions and sales objections, and sat in the middle between customers, Delivery, Finance and Territory Ops.
+                        </p>
 
-                </ul>
-            </div>
+                        <div class="subgrid three">
+                            <div class="mini">
+                                <div class="eyebrow">Sales system</div>
+                                <h4>Chat rebuild</h4>
+                                <p>Built and led Chat for Canada as leader and trainer. +29% conversion. Coached a team of 9. Mentored, trained and coached team on a weekly basis.</p>
+                            </div>
+                            <div class="mini">
+                                <div class="eyebrow">Operations</div>
+                                <h4>Self-Serve Demo Drive</h4>
+                                <p>Launched Canada's first self-serve demo-drive site: created the process, training, fleet operations across all regions and teams for alignment.</p>
+                            </div>
+                            <div class="mini">
+                                <div class="eyebrow">Product &amp; knowledge</div>
+                                <h4>Tesla Assist</h4>
+                                <p>Trained Tesla Assist on Canada policy singlehandedly. Found issues that delayed a bad release on purpose. Built knowledge base and talking points used across Canada and the NW US.</p>
+                            </div>
+                        </div>
+
+                        <h4 class="role-title" style="font-size:15px;margin-top:16px;">Other Accomplishments and Contributions</h4>
+                        <ul>
+                            <li>15,000+ inbound conversations I ran myself - on top of supervising the team.</li>
+                            <li>Loss-prevention screening on third-party lease activations.</li>
+                            <li>Running end-of-quarter campaigns: daily reporting to leadership, completing targeted campaign lists and rescuing high-risk deals.</li>
+                            <li>Escalations across Sales, Inbound, Delivery, and Territory Ops to ensure high customer satisfaction while doing what's right alongside company policy.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- MOTIVATOR -->
+                <article class="exp" id="motivator">
+                    <div class="logo motivator" aria-hidden="true">M</div>
+                    <div>
+                        <h3 class="role-title">Motivator</h3>
+                        <p class="role-org">Director of Business Development · Contract, part-time · ~3 months</p>
+                        <p class="role-meta">Aug — Oct 2024</p>
+                        <p>
+                            Short commercial contract: sponsorship packaging and sales prospecting for the Forward Focus Summit.
+                        </p>
+                        <ul>
+                            <li>Built the sponsor list, packaged the offers in tiers, and ran outbound prospecting to close mutually useful summit sponsorships via LinkedIn.</li>
+                            <li>Finalized sponsorship packages and promo materials. (Landing pages, media packages, profile positioning, outreach emails)</li>
+                            <li>Built trackers, analysis tables, and wrote processes to speed up qualifying companies and identifying opportunities quickly.</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- COMPANIES -->
+            <section class="card card-pad" id="companies">
+                <div class="section-head">
+                    <h2 class="section-title">Companies I built</h2>
+                    <div class="section-sub">2014 — 2022</div>
+                </div>
+
+                <div class="company-block">
+                    <article class="exp" style="border-top:0;padding-top:8px;">
+                        <div class="logo tyt" aria-hidden="true">TYT</div>
+                        <div>
+                            <h3 class="role-title">Triple Your Tribe</h3>
+                            <p class="role-org">Founder &amp; business marketing coach · 2015-2022 · Montreal, QC</p>
+                            <p>
+                                A coaching practice for SMB owners to grow a loyal fanbase, increase sales and foot traffic through Instagram marketing and positioning.
+                            </p>
+                            <ul>
+                                <li>Hosted marketing workshops to 8 paid entrepreneurial groups and 5 international events (NYC, Montreal, UK, Cyprus twice). Guest expert on 9 podcasts. Hosted 600-person group challenges. Wrote a 100-page book on Instagram marketing and positioning for business owners.</li>
+                                <li>Audited 700+ accounts across various industries for unique positioning and messaging to their respective audiences.</li>
+                                <li>Organized my clients on a CRM (HubSpot) - for health checks, follow-ups, and next actions visible.</li>
+                                <li>Offered 1:1 consulting, turbo and full account audits, hashtag research for hyper-focused reach, a paid mastermind, and a free Facebook group.</li>
+                                <li>Client result examples: £15k organic in 30 days from zero; £64k from a bootcamp event launch; another client closed their first clients off Instagram within 2 weeks of starting with me.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="company-block">
+                    <article class="exp" style="border-top:0;padding-top:0;">
+                        <div class="logo dn" aria-hidden="true">DN</div>
+                        <div>
+                            <h3 class="role-title">Dumpling Nation</h3>
+                            <p class="role-org">Co-Founder · 2020-2021 · Montreal, QC</p>
+                            <ul>
+                                <li>Created plant-based dumplings inspired by flavours from around the world as a premium offering in the vegan space.</li>
+                                <li>12,100+ dumplings and sauces made from scratch, 289 customers, 45 repeat (2-5 orders). 1,390 organic loyal Instagram followers. Partnered with 2 retail distributors for bulk orders. One pop-up event in person.</li>
+                                <li>We sold out orders for the week ahead to measure demand ahead of time and consistently improved on our processes to allow for increased production in a small kitchen space.</li>
+                                <li>I set up the website, catalog, email newsletter campaigns, payments, Instagram marketing, corporate team-build classes during lockdowns.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="company-block">
+                    <article class="exp" style="border-top:0;padding-top:0;">
+                        <div class="logo omb" aria-hidden="true">OMB</div>
+                        <div>
+                            <h3 class="role-title">Oil My Beard</h3>
+                            <p class="role-org">Founder · 2014-2015 · Montreal, QC</p>
+                            <ul>
+                                <li>Designed and launched an innovative male grooming product. Sold DTC and partnered with 2 Montreal barbershops for builk orders.</li>
+                                <li>Grew ~20,000 Instagram followers in months on organic outreach and community - then fulfillment, content, copywritingand retail placement myself.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ENGINEERING -->
+            <section class="card card-pad" id="engineering">
+                <div class="section-head">
+                    <h2 class="section-title">Engineering &amp; earlier ops</h2>
+                    <div class="section-sub">2008 — 2017</div>
+                </div>
+                <p style="margin:0 0 8px;color:#666;font-size:14px;line-height:1.55;">
+                    I explored various R&amp;D roles building my cross-functional skills while honing in on design, debugging and efficiency in a fast-paced highly collaborative environment.
+                </p>
+
+                <article class="exp">
+                    <div class="logo trux" aria-hidden="true">TX</div>
+                    <div>
+                        <h3 class="role-title">Trux Accessories</h3>
+                        <p class="role-org">Special Projects Manager · Lead Mechanical Drafter · Marketing Assistant · 2016-2017</p>
+                        <p class="role-tag">R&amp;D · $100k+ contracts</p>
+                        <ul>
+                            <li>Product R&amp;D for truck lighting: New accessory designs from concept through CAD, 3D models, and 3D-scan capture to send to manufacturing.</li>
+                            <li>VP Sales support helping to close $100k+ contracts: Liaison between Sales and Marketing - creating custom product displays, proposal packs, and follow-through so heavy-duty accessory deals progressed.</li>
+                            <li>Brand and channel management: Social media content, contests and brochures for their North American market.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="exp">
+                    <div class="logo cds" aria-hidden="true">CDS</div>
+                    <div>
+                        <h3 class="role-title">CDS Machines</h3>
+                        <p class="role-org">Lead Mechanical Engineer, R&amp;D · 2013-2014</p>
+                        <p class="role-tag">Medical devices · SR&amp;ED</p>
+                        <ul>
+                            <li>Designing &amp; modifying machines for leading medical manufacturer of downstream plastic extrusion systems.</li>
+                            <li>Lead a research &amp; development project for a new medical product line - SRED program</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="exp">
+                    <div class="logo seed" aria-hidden="true">SH</div>
+                    <div>
+                        <h3 class="role-title">Seed Hawk Inc. (Väderstad)</h3>
+                        <p class="role-org">Design Engineer-in-Training · 2012-2013</p>
+                        <p class="role-tag">Ag machinery</p>
+                        <ul>
+                            <li>Updated and adapted designs for large, multi-million-dollar farming equipment and future product lines - CAD modelling and drawings, coordinated with the team through every process, outsourcing and in-house.</li>
+                            <li>Designed and developed prototypes for world-leading zero-tillage seeding systems.</li>
+                            <li>Rapid prototyping in 3D CAD: machined, laser-cut, welded, and sheet-metal parts, outsourcing and in-house, to company and industry standards.</li>
+                            <li>Ran structural analysis in Finite Element Analysis (FEA) software to evaluate modelled designs for reliability.</li>
+                            <li>Improved cost efficiency by iterating designs against manufacturing constraints before parts hit the shop.</li>
+                            <li>Kept the research department moving: constant communication with team members, management, and manufacturing staff.</li>
+                            <li>Documentation: summarized and dated assigned tasks so drawings and follow-ups stayed organized.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="exp">
+                    <div class="logo mcgill" aria-hidden="true">Mc</div>
+                    <div>
+                        <h3 class="role-title">McGill University</h3>
+                        <p class="role-org">Lead Design &amp; Systems Engineer Intern · 2011-2012</p>
+                        <p class="role-tag">$3k cost · ~$170k saved</p>
+                        <ul>
+                            <li>Designed and built a 3D metal printer prototype for a client on a $3,000 budget, saving them $170,000. Printed a 3D slanted metallic pipe at a fraction of market cost.</li>
+                            <li>Built it with a team of 4 undergraduate engineers in a single year - a 3D laser printing table at approximately 2% of the cost of a commercial Selective Laser Sintering table.</li>
+                            <li>Main design challenges: 50-micron metallic powder layers and a smooth, automated powder distribution system. Cost-effective printer capable of fusing metallic powder for composite-nanostructure work.</li>
+                            <li>Moving components: gears, stepper motors, and linear actuators. Evaluated and improved initial concepts and solved issues during the build.</li>
+                            <li>Communication: weekly meetings with the client, advisors, and team. Hit every requirement and exceeded expectations.</li>
+                            <li>Exhibition: design posters and video montages.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="exp">
+                    <div class="logo apple" aria-hidden="true"></div>
+                    <div>
+                        <h3 class="role-title">Apple</h3>
+                        <p class="role-org">Inventory Control Specialist · 2008–2009 · first Montreal store</p>
+                        <p class="role-tag">Retail ops</p>
+                        <ul>
+                            <li>Helped open Apple's first Montreal store and supported big product launches from the back office.</li>
+                            <li>Kept incredibly accurate inventory records during very high movement of goods and organized a small stockroom so retail could run smoothly.</li>
+                            <li>Coordinated the back-of-house team and mentored newcomers under launch pressure.</li>
+                            <li>Completed Core Retail Training: worked the floor when needed - advised customers and recommended complete solutions to support frontend operations.</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- EDUCATION -->
+            <section class="card card-pad" id="education">
+                <div class="section-head">
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <article class="exp" style="border-top:0;padding-top:8px;">
+                    <div class="logo mcgill" aria-hidden="true">Mc</div>
+                    <div>
+                        <h3 class="role-title">McGill University</h3>
+                        <p class="role-org">Bachelor of Engineering, Mechanical Engineering · 2008-2012</p>
+                        <p>
+                            Design, systems, and rapid prototyping. Semester abroad at National University of Singapore in 2011.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- QUOTES -->
+            <section class="card card-pad" id="said">
+                <div class="section-head">
+                    <div>
+                        <div class="section-sub" style="margin-bottom:4px;">Social proof</div>
+                        <h2 class="section-title">What people said</h2>
+                    </div>
+                    <a href="/recommendations.html">Read 40+ recommendations →</a>
+                </div>
+
+                <figure class="quote-card">
+                    <blockquote class="quote">“You’re a rockstar, Léon. You always stay above the noise and focus on delivering excellent work with positivity. We also need more of Léon’s energy during EOQ — he brings exactly the drive and pace the team needs.”</blockquote>
+                    <figcaption><strong>Ismael Zouhair</strong> · Territory Operations Leader, Tesla</figcaption>
+                </figure>
+                <figure class="quote-card">
+                    <blockquote class="quote">“Léon has been absolutely crushing it helping us get the bot’s knowledge up to speed for Canada. The majority of fixes implemented so far are based on his feedback. Without what he’s been doing, our expected release timeframe would have been at least double.”</blockquote>
+                    <figcaption><strong>James Lockman</strong> · Staff Project Manager, Tesla Assist</figcaption>
+                </figure>
+                <figure class="quote-card">
+                    <blockquote class="quote">“Léon is integral to our day-to-day operations. Léon is a pillar in our team who continues to push the boundaries of what’s possible.”</blockquote>
+                    <figcaption><strong>Alberto Colagrosso</strong> · Customer Support Supervisor, Tesla</figcaption>
+                </figure>
+                <figure class="quote-card">
+                    <blockquote class="quote">“I've made close to £15,000 in sales directly generated from Instagram — organically — since we began working together [within 30 days]. And that's starting from ZERO, no followers, no paid ads.”</blockquote>
+                    <figcaption><strong>Justin Devonshire</strong> · The Transform Hub UK</figcaption>
+                </figure>
+            </section>
+
+            <section class="card cta">
+                <h2>What if we worked together?</h2>
+                <p>
+                    Write me an email and we can discuss how I can help your team or business this quarter. I'm looking for roles that own customers, a team, or operations to improve sales, collaboration and customer satisfaction.
+                </p>
+                <a href="mailto:leon.benjamignan@hey.com" class="btn">Email me</a>
+                <p class="fine">
+                    Role-specific resumes available on request ·
+                    <a href="/recommendations.html">See Recommendations</a>
+                </p>
+            </section>
         </div>
-    </div>
-
-    <!-- EDUCATION -->
-    <div id="education" class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
-        <div class="mb-6">
-            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Education</div>
-            <h2 class="section-header tracking-tighter mt-1">Education</h2>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border border-[#E5E7EB]">
-            <div class="font-semibold text-xl tracking-tight">McGill University</div>
-            <div class="text-[#6B7280]">Bachelor of Engineering, Mechanical Engineering · 2008-2012</div>
-            <p class="mt-3 text-[15px] text-[#4B5563]">Design, systems, and rapid prototyping. Semester abroad at National University of Singapore in 2011.</p>
-        </div>
-    </div>
-
-    <!-- QUOTES -->
-    <div id="said" class="max-w-7xl mx-auto px-6 py-12 border-t border-[#E5E7EB]">
-        <div class="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
-            <div>
-                <div class="uppercase tracking-[2px] text-xs font-semibold text-[#0D9488]">Social proof</div>
-                <h2 class="section-header tracking-tighter mt-1">What people said</h2>
-            </div>
-            <a href="/recommendations.html" class="text-sm font-semibold text-[#0D9488] hover:text-[#0F766E]">Read 40+ recommendations →</a>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-5">
-            <figure class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <blockquote class="text-[15px] leading-relaxed text-[#374151]">“You’re a rockstar, Léon. You always stay above the noise and focus on delivering excellent work with positivity. We also need more of Léon’s energy during EOQ — he brings exactly the drive and pace the team needs.”</blockquote>
-                <figcaption class="mt-4 text-sm"><span class="font-semibold">Ismael Zouhair</span><span class="text-[#6B7280]"> · Territory Operations Leader, Tesla</span></figcaption>
-            </figure>
-            <figure class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <blockquote class="text-[15px] leading-relaxed text-[#374151]">“Léon has been absolutely crushing it helping us get the bot’s knowledge up to speed for Canada. The majority of fixes implemented so far are based on his feedback. Without what he’s been doing, our expected release timeframe would have been at least double.”</blockquote>
-                <figcaption class="mt-4 text-sm"><span class="font-semibold">James Lockman</span><span class="text-[#6B7280]"> · Staff Project Manager, Tesla Assist</span></figcaption>
-            </figure>
-            <figure class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <blockquote class="text-[15px] leading-relaxed text-[#374151]">“Léon is integral to our day-to-day operations. Léon is a pillar in our team who continues to push the boundaries of what’s possible.”</blockquote>
-                <figcaption class="mt-4 text-sm"><span class="font-semibold">Alberto Colagrosso</span><span class="text-[#6B7280]"> · Customer Support Supervisor, Tesla</span></figcaption>
-            </figure>
-            <figure class="bg-white p-7 rounded-3xl border border-[#E5E7EB]">
-                <blockquote class="text-[15px] leading-relaxed text-[#374151]">“I've made close to £15,000 in sales directly generated from Instagram — organically — since we began working together [within 30 days]. And that's starting from ZERO, no followers, no paid ads.”</blockquote>
-                <figcaption class="mt-4 text-sm"><span class="font-semibold">Justin Devonshire</span><span class="text-[#6B7280]"> · The Transform Hub UK</span></figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="max-w-3xl mx-auto px-6 py-16 text-center border-t border-[#E5E7EB]">
-        <h2 class="text-3xl font-semibold tracking-tight">What if we worked together?</h2>
-        <p class="mt-3 text-[16px] text-[#4B5563] leading-relaxed">
-            Write me an email and we can discuss how I can help your team or business this quarter. I'm looking for roles that own customers, a team, or operations to improve sales, collaboration and customer satisfaction. 
-        </p>
-        <a href="mailto:leon.benjamignan@hey.com"
-           class="mt-8 inline-flex items-center px-8 py-4 bg-[#0D9488] hover:bg-[#0F766E] text-white text-lg font-semibold rounded-3xl transition-all active:scale-[0.985]">
-            Email me
-        </a>
-        <p class="mt-4 text-sm text-[#9CA3AF]">
-            Role-specific resumes available on request ·
-            <a href="/recommendations.html" class="hover:text-[#0D9488]">See Recommendations</a>
-        </p>
     </div>
 
     <cta-footer></cta-footer>
